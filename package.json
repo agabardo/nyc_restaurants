@@ -1,0 +1,30 @@
+{
+  "name": "myapp",
+  "version": "0.0.1",
+  "description": "First Tests with Express, Angular, Node.JS, MongoDB and Bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agabardo/nyc_restaurants.git"
+  },
+  "keywords": [
+    "NYC",
+    "Restaurants",
+    "Node.JS",
+    "MongoDB",
+    "Angular",
+    "Express"
+  ],
+  "author": "@agabardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agabardo/nyc_restaurants/issues"
+  },
+  "homepage": "https://github.com/agabardo/nyc_restaurants#readme",
+  "dependencies" : {
+    "express" : "latest"
+  }
+}
