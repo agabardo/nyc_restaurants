@@ -15,8 +15,7 @@ router.get('/', function(req, res, next) {
 		    if (err) {
 		        throw err;
 		      }
-		  //var restaurants =  result;
-		  //console.log(result);
+		  
 		  restaurants = result;
 	  });
       
