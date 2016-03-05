@@ -4,5 +4,10 @@
 	</head>
 	<body>
 		<%= eventData.dados %>
+		<ul>
+		    <% eventData.restaurants.forEach(function(restaurant) { %>
+		        <li><%= restaurant.name %></li>
+		    <% }); %>
+		</ul>
 	</body>
 </html>
