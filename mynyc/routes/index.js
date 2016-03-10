@@ -1,5 +1,12 @@
-var express = require('express');
-var router = express.Router();
+//var express = require('express');
+
+var express = require('express'),
+router = express.Router(),
+mongoose = require('mongoose'), //mongo connection
+bodyParser = require('body-parser'), //parses information from POST
+methodOverride = require('method-override'); //used to manipulate POST
+
+//var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
 var restaurants;
 var restaurants2;
