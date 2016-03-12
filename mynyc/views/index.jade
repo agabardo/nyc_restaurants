@@ -2,10 +2,10 @@ extends layout
 
 block content
   h1 #{title}
-  p Welcome to #{title}
+  p Cuisine: #{cuisine}
 
   ul
   - each restaurant, i in restaurants
     li
-      = restaurant.name
+      = restaurant.name +" - "+ restaurant.address.street
             
