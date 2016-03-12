@@ -11,7 +11,6 @@ var db = require('./model/db');
 var restaurants = require('./model/restaurants');
 
 
-
 var app = express();
 
 // view engine setup

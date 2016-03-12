@@ -2,10 +2,14 @@ extends layout
 
 block content
   h1 #{title}
-  p Cuisine: #{cuisine}
 
   ul
+  - each cu, i in cuisines_list
+    li= cu.cuisine
+
+  p Cuisine: #{cuisine}
+
+  ul 
   - each restaurant, i in restaurants
-    li
-      = restaurant.name +" - "+ restaurant.address.street
+    li= restaurant.name +" - "+ restaurant.address.street
             

@@ -6,17 +6,39 @@ methodOverride = require('method-override'); //used to manipulate POST
 
 router.get('/', function(req, res, next) {
 	
+	var filter;
+	var cuisine;
+	var cuisinesList;
 	
-	mongoose.model('Restaurants').find({cuisine:"Italian"}, function (err, restaurants) {
+	if(req.query.cuisine){
+		filter = {cuisine:req.query.cuisine};
+		cuisine = req.query.cuisine;
+	}
+	else{
+		filter = {};
+		cuisine = "All";
+	}
+	
+	mongoose.model('Restaurants').distinct("cuisine", function (err, cuisinesList){
+		if (err) {
+			return console.error(err);
+		} else{
+			lista = cuisinesList;
+		}
+	});
+	
+	mongoose.model('Restaurants').find(filter, function (err, restaurants) {
         if (err) {
             return console.error(err);
         } else {
+        	console.log(cuisinesList);
             res.format({
                 
               html: function(){
                   res.render('index', {
                         title: 'NYC Restaurants',
-                        cuisine: req.query.cuisine,
+                        "cuisines_list": lista,
+                        cuisine: cuisine,
                         "restaurants" : restaurants
                   });
               },
@@ -26,7 +48,7 @@ router.get('/', function(req, res, next) {
               }
           });
         }
-	}).limit(10);
+	}).limit(null);
 	
 });
 
