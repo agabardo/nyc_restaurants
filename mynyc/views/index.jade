@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  h1 #{eventData.titulo}
-  p Welcome to #{eventData.titulo}
+  h1 #{title}
+  p Welcome to #{title}
 
   ul
-  - each restaurant, i in eventData.restaurants
+  - each restaurant, i in restaurants
     li
       = restaurant.name
             

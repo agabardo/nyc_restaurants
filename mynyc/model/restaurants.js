@@ -3,12 +3,7 @@ var restaurantSchema = new mongoose.Schema({
   restaurant_id: Number,
   name: String,
   cuisine: String,
-  borouhg: String,
-  address: {
-	  zipcode : String,
-	  building : String,
-	  street : String
-  }
+  borouhg: String
 });
 mongoose.model('Restaurants', restaurantSchema);
 
