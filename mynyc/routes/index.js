@@ -5,6 +5,7 @@ router.get('/', function(req, res, next) {
 	var filter;
 	var cuisine;
 	var cuisinesList;
+	var boroughs;
 
 	if (req.query.cuisine) {
 		filter = {cuisine : req.query.cuisine};
@@ -14,6 +15,15 @@ router.get('/', function(req, res, next) {
 		filter = {};
 		cuisine = "All";
 	}
+	
+	mongoose.model('Restaurants').distinct("borough", function(err, resBorough){
+		if (err) {
+			return console.error(err);
+		} 
+		else{
+			boroughs = resBorough;
+		}
+	});
 
 	mongoose.model('Restaurants').distinct("cuisine", function(err, cuisinesList) {
 		if (err) {
@@ -31,6 +41,7 @@ router.get('/', function(req, res, next) {
 							res.render('index', {
 								title : 'NYC Restaurants',
 								"cuisines_list" : cuisinesList,
+								"boroughs_list" : boroughs,
 								cuisine : cuisine,
 								"restaurants" : restaurants});
 							}, 

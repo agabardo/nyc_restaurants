@@ -3,13 +3,17 @@ extends layout
 block content
   h1 #{title}
 
-  ul
+  h2 Browse by borough.
+  - each borough, i in boroughs_list
+    a(href="?borough="+borough) #{ borough } | 
+  
+  h2 Browse by cuisine.
   - each thisCuisine, x in cuisines_list
-    a(href="?cuisine="+thisCuisine) #{thisCuisine + " | "}
+    a(href="?cuisine="+thisCuisine) #{ thisCuisine } | 
 
-  p Cuisine: #{cuisine}
+  h2 Cuisine: #{cuisine}
 
   ul 
   - each restaurant, i in restaurants
-    li= restaurant.name +" - "+ restaurant.address.street
+    li= restaurant.name +" - "+ restaurant.address.street + " - " + restaurant.borough
             
