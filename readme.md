@@ -1,8 +1,4 @@
-##########
-Repository with the first experiments with MongoDB, Express, Angular and Node.JS.
-##########
+# NYC RESTAURANTS
+> Spare time project using Node.JS, MongoDB and Express. Full of mistakes, so.. download at your own risk.
 
-Goal: With the example dataset of NYC restaurants build an small web search page to find restaurants in NYC.
-Status: in progress...
-
-Pending: read the data from database and send to the Javascript on the header..
+![](screenshot.png)
