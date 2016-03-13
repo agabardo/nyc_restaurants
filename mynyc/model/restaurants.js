@@ -8,6 +8,10 @@ var restaurantSchema = new mongoose.Schema({
 });
 mongoose.model('Restaurants', restaurantSchema);
 
+var cuisineSchema = new mongoose.Schema({  
+	  cuisine: String
+	});
+mongoose.model('Cuisines', cuisineSchema);
 /*
 "_id" : ObjectId("56b5b0bf7853e8294156f01f"),
 "address" : {

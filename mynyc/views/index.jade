@@ -4,8 +4,8 @@ block content
   h1 #{title}
 
   ul
-  - each cu, i in cuisines_list
-    li= cu.cuisine
+  - each thisCuisine, x in cuisines_list
+    a(href="?cuisine="+thisCuisine) #{thisCuisine + " | "}
 
   p Cuisine: #{cuisine}
 
