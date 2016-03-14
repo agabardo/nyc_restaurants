@@ -3,5 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    script(type='text/javascript')
+      var title = !{title}
+      window.alert = !{title}
+    
   body
     block content
