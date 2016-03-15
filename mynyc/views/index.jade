@@ -2,16 +2,16 @@ extends layout
 
 block content
   h1 #{title}
-
-  h2 Browse by borough.
-  - each borough, i in boroughs_list
-    a(href="?borough="+borough) #{ borough } | 
   
   h2 Browse by cuisine.
   - each thisCuisine, x in cuisines_list
     a(href="?cuisine="+thisCuisine) #{ thisCuisine } | 
 
   h2 Cuisine: #{cuisine}
+
+  h2 Filter by borough.
+  - each borough, i in boroughs_list
+    a(href="?cuisine=#{cuisine}&borough="+borough) #{ borough } | 
 
   ul 
   - each restaurant, i in restaurants

@@ -7,12 +7,19 @@ router.get('/', function(req, res, next) {
 	var cuisinesList;
 	var boroughs;
 
-	if (req.query.cuisine) {
+	if (req.query.cuisine && req.query.cuisine !="All") {
 		filter = {cuisine : req.query.cuisine};
 		cuisine = req.query.cuisine;
+		
+		if(req.query.borough){
+			filter = {cuisine : req.query.cuisine, borough : req.query.borough};
+		}
 	} 
 	else {
 		filter = {};
+		if(req.query.borough){
+			filter = {cuisine : req.query.cuisine, borough : req.query.borough};
+		}
 		cuisine = "All";
 	}
 	
