@@ -13,6 +13,8 @@ block content
   - each borough, i in boroughs_list
     a(href="?cuisine=#{cuisine}&borough="+borough) #{ borough } | 
 
+  div(id="map")
+
   ul 
   - each restaurant, i in restaurants
     li= restaurant.name +" - "+ restaurant.address.street + " - " + restaurant.borough

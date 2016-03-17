@@ -12,3 +12,9 @@ a {
 a:hover{
 	color: #000000;
 }
+
+#map {
+    width: 500px;
+    height: 400px;
+    background-color: #CCC;
+}

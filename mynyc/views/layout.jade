@@ -2,11 +2,20 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/style.css?i=a')
+    
+    script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF28Ae18IkTjaVQX7YpGpUvNfJHQ2xVK0&callback=initMap" async defer)
     
     script.
       //var title = "!{title}";
       //window.alert(title);
       //Add the Google Maps here!...
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          zoom: 8
+        });
+      }
+      
   body
     block content
