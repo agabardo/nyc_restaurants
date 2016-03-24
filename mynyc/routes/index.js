@@ -37,7 +37,7 @@ router.get('/', function(req, res, next) {
 			return console.error(err);
 		} 
 		else {
-		//console.log(cuisinesList);
+			//console.log(cuisinesList);
 			mongoose.model('Restaurants').find(filter, function(err, restaurants) {
 				if (err) {
 					return console.error(err);
@@ -50,10 +50,11 @@ router.get('/', function(req, res, next) {
 								"cuisines_list" : cuisinesList,
 								"boroughs_list" : boroughs,
 								cuisine : cuisine,
+								"restaurants2" : JSON.stringify(restaurants),
 								"restaurants" : restaurants});
 							}, 
 							json : function() { // JSON response
-								res.json(restaurants, cuisinesList);
+								//res.json(restaurants, cuisinesList);
 							}
 					});
 				}
