@@ -1,7 +1,7 @@
 var express = require('express'), router = express.Router(), mongoose = require('mongoose'), // mongo connection
 bodyParser = require('body-parser'), // parses information from POST
 methodOverride = require('method-override'); // used to manipulate POST
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
 
 	var boroughs;
 	var cuisine = "All";
@@ -13,8 +13,8 @@ router.get('/', function(req, res, next) {
 			boroughs = resBorough;
 		}
 	});
-	
-	var filter = {$text:{$search: "Dog"}};
+    
+	var filter = {$text:{$search: req.body.search}};
 	
 	mongoose.model('Restaurants').distinct("cuisine", function(err, cuisinesList) {
 		if (err) {
