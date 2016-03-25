@@ -10,7 +10,7 @@ html
     script.
       //var title = "!{title}";
       //window.alert(title);
-      //Add the Google Maps here!...
+      
       function initMap() {
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {center: {lat: 40.752019, lng: -73.988803}, zoom: 18});
@@ -21,7 +21,7 @@ html
         for(i=0;i<markers.length;i++){
           coords = (markers[i].address.coord).split(",");
           var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(coords[1], coords[0]),
+            position: new google.maps.LatLng( parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6)),
             map: map,
             title: markers[i].name,
             icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
@@ -29,22 +29,7 @@ html
           bounds.extend(marker.position);
           //window.alert(marker.position);
         }
-        
         map.fitBounds(bounds);
-        
-        /*
-        var listener = google.maps.event.addListener(map, "idle", function () {
-          map.setZoom(18);
-          google.maps.event.removeListener(listener);
-        });*/
-        
-        /*
-        var center = {lat: 40.752019, lng: -73.988803};
-        var marker = new google.maps.Marker({
-          map: map,
-          position: center,
-          title: 'Hello World!'
-        });*/
       }
 
   body
