@@ -3,6 +3,8 @@ extends layout
 block content
   h1 #{title}
   
+  form
+  
   h2 Browse by cuisine.
   - each thisCuisine, x in cuisines_list
     a(href="?cuisine="+thisCuisine) #{ thisCuisine } | 
