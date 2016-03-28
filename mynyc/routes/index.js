@@ -1,12 +1,16 @@
 var express = require('express'), router = express.Router(), mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
 methodOverride = require('method-override');
+var Promise = require('bluebird');
+
+
 router.get('/', function(req, res, next) {
 
 	var filter = {};
 	var cuisine = "All";
-	var cuisinesList;
-	var boroughs;
+	var cuisinesList = {};
+	var boroughs = {};
+	var restaurantsModel = mongoose.model('Restaurants');
 
 	if(req.query.borough){
 		filter = {cuisine : req.query.cuisine, borough : req.query.borough};
@@ -19,44 +23,26 @@ router.get('/', function(req, res, next) {
 		}
 	}
 
-
-	findBorough = () => {
-		mongoose.model('Restaurants').distinct("borough", function(err, resBorough){
-			if (err) {return console.log(err);}
-			else{boroughs = resBorough;}
-		});
-	}
-
-	listCuisines = () => {
-		mongoose.model('Restaurants').distinct("cuisine", function(err, resCuisinesList) {
-			if (err) {return console.log(err);}
-			else {cuisinesList = resCuisinesList;}
-		});
-	}
-
-	findBorough();
-	listCuisines();
-
-	mongoose.model('Restaurants').find(filter, function(err, resRestaurants) {
-		if (err) {return console.error(err);}
-		else{
-
-			res.format({
-				html : function() {
-					res.render('index', {
-						title : 'NYC Restaurants',
-						"cuisines_list" : cuisinesList,
-						"boroughs_list" : boroughs,
-						"cuisine"		: cuisine,
-						"restaurants2" 	: JSON.stringify(resRestaurants),
-						"restaurants" 	: resRestaurants});
-					},
-					json : function() { // JSON response
-						//res.json(restaurants, cuisinesList);
-					}
-			});
-		}
-	}).limit(null);
+	console.log(filter);
+	
+	Promise.promisifyAll(mongoose);
+	
+	Promise.props({
+		title : 'NYC Restaurants',
+		boroughs_list	: restaurantsModel.distinct("borough").execAsync(),
+		cuisines_list	: restaurantsModel.distinct("cuisine").execAsync(),
+		restaurants		: restaurantsModel.find(filter).limit(null).execAsync(),
+		"cuisine" 		: cuisine,
+		restaurants2	: JSON.stringify(restaurantsModel.find(filter).limit(null).execAsync())
+	  })
+	  .then(function(results) {
+		//res.json(results);
+	    res.render('index', results);
+	  })
+	  .catch(function(err) {
+		console.log(err);
+	    res.send(500); // oops - we're even handling errors!
+	  });
 
 });
 module.exports = router;
