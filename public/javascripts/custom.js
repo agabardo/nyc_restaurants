@@ -5,13 +5,13 @@ var bounds = new google.maps.LatLngBounds();
 var styleArray = [ {
 	featureType : "all",
 	stylers : [ {
-		saturation : -80
+		saturation : -70
 	} ]
 }, {
 	featureType : "road.arterial",
 	elementType : "geometry",
 	stylers : [ {
-		hue : "#eeffee"
+		hue : "#CCffee"
 	}, {
 		saturation : 50
 	} ]
