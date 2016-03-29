@@ -1,29 +1,62 @@
 extends layout
 
 block content
-  h1 #{title}
   
-  form(method="post" action="http://localhost:3000/search")
-    input(name="search" type="text" id="search" value="")
-    input(type="submit" value="Search")
-  
-  h2 Browse by cuisine.
-  - each thisCuisine, x in cuisines_list
-    a(href="?cuisine="+thisCuisine) #{ thisCuisine } | 
+  .container
+    .row
+      .col-md-4
+        
+        img(src="images/logo-small.png" class="logo")
+        
+        form(method="post" action="")
+          .input-group
+            input(name="search" type="text" id="search" class="form-control" placeholder="Search for...")
+            span(class="input-group-btn")
+              input(type="submit" class="btn btn-default" value="GO")
+        br
+        .dropdown  
+          button(class="btn input-block-level form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+            ="Browse by cuisine "
+            span(class="caret")
+          
+          ul(class="dropdown-menu" aria-labelledby="dropdownMenu1")
+            - each thisCuisine, x in cuisines_list
+              li
+                a(href="?cuisine="+thisCuisine) #{thisCuisine} 
+        br
+        .dropdown
+          button(class="btn input-block-level form-control" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+            ="Browse by Borough "
+            span(class="caret")
+          ul(class="dropdown-menu" aria-labelledby="dropdownMenu2")
+            - each borough, i in boroughs_list
+              li
+                a(href="?cuisine=#{cuisine}&borough="+borough) #{borough}
 
-  h2 Cuisine: #{cuisine}
-
-  h2 Filter by borough.
-  - each borough, i in boroughs_list
-    a(href="?cuisine=#{cuisine}&borough="+borough) #{ borough } | 
-
-  div(id="map")
-
-  ul 
-  - each restaurant, i in restaurants
-    li= restaurant.name +" - "+ restaurant.address.street + " - " + restaurant.borough
-    script.
-      $(document).ready(function(){
-        coords = ("!{restaurant.address.coord}").split(",");
-        addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), "!{restaurant.name}");
-      });
+      .col-md-8
+        if search
+          p(class="lead") Your search: #{search} found #{restaurants.length} results.
+        else if borough
+          p(class="lead") Cuisine: #{cuisine} at #{borough} has #{restaurants.length} results.
+        else
+          p(class="lead") Cuisine: #{cuisine}
+    
+        #map
+        br
+        table(class="table")
+         thead
+          th Name
+          th Address
+          th Borough
+          th Rate
+         - each restaurant, i in restaurants
+          tr
+            td=restaurant.name 
+            td=restaurant.address.street 
+            td=restaurant.borough
+            td *****
+            script.
+              $(document).ready(function(){
+                coords = ("!{restaurant.address.coord}").split(",");
+                addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), "!{restaurant.name}");
+              });

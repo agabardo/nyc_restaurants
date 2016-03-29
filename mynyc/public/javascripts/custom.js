@@ -2,11 +2,33 @@ $(document).ready(initialize);
 var MyMap;
 var bounds = new google.maps.LatLngBounds();
 
+var styleArray = [ {
+	featureType : "all",
+	stylers : [ {
+		saturation : -80
+	} ]
+}, {
+	featureType : "road.arterial",
+	elementType : "geometry",
+	stylers : [ {
+		hue : "#eeffee"
+	}, {
+		saturation : 50
+	} ]
+}, {
+	featureType : "poi.business",
+	elementType : "labels",
+	stylers : [ {
+		visibility : "off"
+	} ]
+} ];
+
 function initialize() {
 	var latlng = new google.maps.LatLng(40.751771, -73.988694);
 	var options = {
 		zoom : 20,
-		center : latlng
+		center : latlng,
+		styles: styleArray
 	};
 	MyMap = new google.maps.Map(document.getElementById('map'), options);
 }
@@ -16,7 +38,8 @@ function addMarker(lat, lng, title) {
 	var marker = new google.maps.Marker({
 		title : title,
 		position : point,
-		map : MyMap
+		map : MyMap,
+		icon : "images/marker.png"
 	});
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);

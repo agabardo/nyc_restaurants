@@ -18,3 +18,15 @@ a:hover{
     height: 450px;
     background-color: #CCC;
 }
+
+.logo{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.100-percent{
+	width: 100%;
+}

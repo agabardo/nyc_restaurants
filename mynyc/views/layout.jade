@@ -1,11 +1,18 @@
 doctype html
 html
   head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Example website for searching restaurants in New York, filtering by cuisine and borough.")
+    meta(name="author" content="Ademir C. Gabardo, @agabardo")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css?i=a')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/shop-homepage.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA")
     script(type="text/javascript" src="javascripts/jquery-2.2.2.min.js")
     script(type="text/javascript" src="javascripts/custom.js")
-      
+    script(type="text/javascript" src="javascripts/bootstrap.min.js")
   body
     block content
