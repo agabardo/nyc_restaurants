@@ -22,4 +22,8 @@ block content
   ul 
   - each restaurant, i in restaurants
     li= restaurant.name +" - "+ restaurant.address.street + " - " + restaurant.borough
-            
+    script.
+      $(document).ready(function(){
+        coords = ("!{restaurant.address.coord}").split(",");
+        addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), "!{restaurant.name}");
+      });

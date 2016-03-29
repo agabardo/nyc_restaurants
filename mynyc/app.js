@@ -20,7 +20,6 @@ app.set('view engine', 'jade');
 // app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
 
-
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -40,6 +39,15 @@ app.use(function(req, res, next) {
 	err.status = 404;
 	next(err);
 });
+
+
+//Cache
+/*
+app.use(function(req, res, next){
+   res.setHeader("Cache-Control", "public, max-age=2592000");//Cache de 1 dia
+   res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
+   next();
+});*/
 
 // error handlers
 
