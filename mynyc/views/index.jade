@@ -32,6 +32,21 @@ block content
             - each borough, i in boroughs_list
               li
                 a(href="?cuisine=#{cuisine}&borough="+borough) #{borough}
+        br
+        div(class="row carousel-holder boxed")
+         .col-md-12
+          div(id="carousel-example-generic" class="carousel slide" data-ride="carousel")
+            ol(class="carousel-indicators")
+              li(data-target="#carousel-example-generic" data-slide-to="0" class="active")
+              li(data-target="#carousel-example-generic" data-slide-to="1")
+              li(data-target="#carousel-example-generic" data-slide-to="2")
+            .carousel-inner
+              div(class="item active")
+                img(class="slide-image" src="http://placehold.it/200x200" alt="")
+              .item
+                img(class="slide-image" src="http://placehold.it/200x200" alt="")
+              .item
+                img(class="slide-image" src="http://placehold.it/200x200" alt="")
 
       .col-md-8
         if search
