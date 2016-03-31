@@ -32,6 +32,15 @@ block content
             - each borough, i in boroughs_list
               li
                 a(href="?cuisine=#{cuisine}&borough="+borough) #{borough}
+        
+        br
+        #grades
+          p(class='lead')
+           ="Filter by Grade"
+           br
+           - each grade, i in grades
+             a(href="?grade=#{grade}") #{grade} 
+        
         br
         div(class="row carousel-holder boxed")
          .col-md-12

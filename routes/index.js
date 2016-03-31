@@ -19,6 +19,7 @@ router.post('/', function(req, res, next){
 		boroughs_list	: restaurantsModel.distinct("borough").execAsync(),
 		cuisines_list	: restaurantsModel.distinct("cuisine").execAsync(),
 		restaurants		: restaurantsModel.find(filter,restaurant_fields).limit(limit).execAsync(),
+		grades			: restaurantsModel.distinct("grades.grade").execAsync(),
 		"cuisine" 		: cuisine,
 		"search"		: search
 	}).then(function(results) {
@@ -26,7 +27,7 @@ router.post('/', function(req, res, next){
 	    res.render('index', results);
 	}).catch(function(err) {
 		console.log(err);
-	    res.send(500); // oops - we're even handling errors!
+	    //res.send(500); // oops - we're even handling errors!
 	});
 });
 
@@ -59,6 +60,7 @@ router.get('/', function(req, res, next) {
 		title : 'NYC Restaurants',
 		boroughs_list	: restaurantsModel.distinct("borough").execAsync(),
 		cuisines_list	: restaurantsModel.distinct("cuisine").execAsync(),
+		grades			: restaurantsModel.distinct("grades.grade").execAsync(),
 		restaurants		: restaurantsModel.find(filter,restaurant_fields).limit(limit).execAsync(),
 		"cuisine" 		: cuisine,
 		"borough"		: borough
