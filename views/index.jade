@@ -15,9 +15,14 @@ block content
               input(type="submit" class="btn btn-default" value="GO")
         br
         .dropdown  
-          button(class="btn input-block-level form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
-            ="Browse by cuisine "
-            span(class="caret")
+          if cuisine != "All"
+            button(class="btn input-block-level form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+             !{cuisine} &nbsp;
+             span(class="caret")
+          else
+            button(class="btn input-block-level form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+             ="Browse by cuisine "
+             span(class="caret")
           
           ul(class="dropdown-menu" aria-labelledby="dropdownMenu1")
             - each thisCuisine, x in cuisines_list
@@ -26,8 +31,13 @@ block content
         br
         .dropdown
           button(class="btn input-block-level form-control" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
-            ="Browse by Borough "
-            span(class="caret")
+            if(borough)
+             !{borough} &nbsp;
+             span(class="caret")
+            else
+             ="Browse by Borough "
+             span(class="caret")
+            
           ul(class="dropdown-menu" aria-labelledby="dropdownMenu2")
             - each borough, i in boroughs_list
               li
@@ -51,11 +61,11 @@ block content
               li(data-target="#carousel-example-generic" data-slide-to="2")
             .carousel-inner
               div(class="item active")
-                img(class="slide-image" src="http://placehold.it/200x200" alt="")
+                img(class="slide-image" src="images/01.jpg" alt="")
               .item
-                img(class="slide-image" src="http://placehold.it/200x200" alt="")
+                img(class="slide-image" src="images/02.jpg" alt="")
               .item
-                img(class="slide-image" src="http://placehold.it/200x200" alt="")
+                img(class="slide-image" src="images/03.jpg" alt="")
 
       .col-md-8
         if search
