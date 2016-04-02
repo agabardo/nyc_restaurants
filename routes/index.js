@@ -16,7 +16,7 @@ router.post('/', function(req, res, next){
 	var boroughs = {};
 	
 	var restaurantsModel = mongoose.model('Restaurants');
-	var restaurant_fields = {zipcode:true, street:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
+	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
 	var limit = null;
 	Promise.promisifyAll(mongoose);
 	Promise.props({
@@ -62,7 +62,7 @@ router.get('/', function(req, res, next) {
 	console.log(filter);
 	
 	var restaurantsModel = mongoose.model('Restaurants');
-	var restaurant_fields = {zipcode:true, street:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
+	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
 	var limit = null;
 	Promise.promisifyAll(mongoose);
 	Promise.props({

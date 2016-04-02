@@ -7,7 +7,7 @@ var restaurantSchema = new mongoose.Schema({
   grades: {grade:String, score:Number},
   lower: Number,
   upper: Number,
-  address: {building:String, building:String, street:String, coord:String}
+  address: {building:String, building:String, street:String, coord:String, zipcode:String}
 });
 mongoose.model('Restaurants', restaurantSchema);
 

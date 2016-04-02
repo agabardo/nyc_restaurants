@@ -25,6 +25,8 @@ block content
              span(class="caret")
           
           ul(class="dropdown-menu" aria-labelledby="dropdownMenu1")
+            li
+              a(href="?cuisine=All") All
             - each thisCuisine, x in cuisines_list
               li
                 a(href="?cuisine="+thisCuisine) #{thisCuisine} 
@@ -39,6 +41,9 @@ block content
              span(class="caret")
             
           ul(class="dropdown-menu" aria-labelledby="dropdownMenu2")
+            li
+              a(href="?cuisine=#{cuisine}&borough=All") All
+              
             - each borough, i in boroughs_list
               li
                 a(href="?cuisine=#{cuisine}&borough="+borough) #{borough}
@@ -85,15 +90,19 @@ block content
           th Name
           th Address
           th Borough
-          th Rate
+          th Rates
          - each restaurant, i in restaurants
           tr
             td=restaurant.name 
-            td=restaurant.address.street 
+            td=restaurant.address.street, restaurant.zipcode 
             td=restaurant.borough
-            td *****
+            td
+             - each grade, g in JSON.parse(JSON.stringify(restaurant.grades))
+              !{grade.grade}
+             
             script.
-              $(document).ready(function(){
-                coords = ("!{restaurant.address.coord}").split(",");
-                addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), "!{restaurant.name}");
+             $(document).ready(function(){
+               coords = ("!{restaurant.address.coord}").split(",");
+               addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), "!{restaurant.name}");
               });
+              
