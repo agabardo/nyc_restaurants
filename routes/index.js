@@ -57,11 +57,13 @@ router.get('/', function(req, res, next) {
 	var limit = null;
 	Promise.promisifyAll(mongoose);
 	Promise.props({
-		title : 'NYC Restaurants',
+		title 			: 'NYC Restaurants',
 		boroughs_list	: restaurantsModel.distinct("borough").execAsync(),
 		cuisines_list	: restaurantsModel.distinct("cuisine").execAsync(),
 		grades			: restaurantsModel.distinct("grades.grade").execAsync(),
 		restaurants		: restaurantsModel.find(filter,restaurant_fields).limit(limit).execAsync(),
+		lower			: "1", //restaurantsModel.find({},{"grades.score":1}).sort({"grades.score":1}).limit(1)
+		upper			: restaurantsModel.find({},{"grades.score":1}).sort({"grades.score":-1}).limit(1),
 		"cuisine" 		: cuisine,
 		"borough"		: borough
 	}).then(function(results) {

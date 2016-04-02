@@ -4,7 +4,9 @@ var restaurantSchema = new mongoose.Schema({
   name: String,
   cuisine: String,
   borough: String,
-  grades: {grade:String},
+  grades: {grade:String, score:Number},
+  lower: Number,
+  upper: Number,
   address: {building:String, building:String, street:String, coord:String}
 });
 mongoose.model('Restaurants', restaurantSchema);
