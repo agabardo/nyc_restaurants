@@ -49,7 +49,7 @@ block content
            ="Filter by Grade"
            br
            - each grade, i in grades
-             a(href="?grade=#{grade}") #{grade}  
+             a(href="?cuisine=#{cuisine}&borough=#{borough}&grade=#{grade}") #{grade}  
         
         br
         #scores
@@ -75,10 +75,8 @@ block content
       .col-md-8
         if search
           p(class="lead") Your search: #{search} found #{restaurants.length} results.
-        else if borough
-          p(class="lead") Cuisine: #{cuisine} at #{borough} has #{restaurants.length} results.
         else
-          p(class="lead") Cuisine: #{cuisine}
+          p(class="lead") Cuisine: #{cuisine}, at: #{borough}, grade: #{grade} has #{restaurants.length} results.
     
         #map
         br

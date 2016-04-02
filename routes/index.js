@@ -1,3 +1,8 @@
+function mergeJsObjects(obj, src) {
+    Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+    return obj;
+}
+
 var express = require('express'), router = express.Router(), mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
 methodOverride = require('method-override');
@@ -35,22 +40,26 @@ router.get('/', function(req, res, next) {
 
 	var filter = {};
 	var cuisine = "All";
-	var borough = null;
+	var borough = "All";
+	var grade = "All";
 	var cuisinesList = {};
 	var boroughs = {};
 
-	if(req.query.borough){
+	if(req.query.borough && req.query.borough != "All"){
 		borough = req.query.borough;
-		filter = {cuisine : req.query.cuisine, borough : req.query.borough};
+		filter.borough = req.query.borough;
 	}
-	if(req.query.cuisine){
-		filter = {cuisine : req.query.cuisine};
+	if(req.query.cuisine && req.query.cuisine != "All"){
 		cuisine = req.query.cuisine;
-		if(req.query.borough){
-			borough = req.query.borough;
-			filter = {cuisine : req.query.cuisine, borough : req.query.borough};
-		}
+		filter.cuisine = req.query.cuisine;
 	}
+	if(req.query.grade && req.query.grade != "All"){
+		grade = req.query.grade;
+		filterB = {"grades.grade":req.query.grade};
+		filter = mergeJsObjects(filterB,filter); //Temporary...
+	}
+	
+	console.log(filter);
 	
 	var restaurantsModel = mongoose.model('Restaurants');
 	var restaurant_fields = {zipcode:true, street:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
@@ -65,7 +74,8 @@ router.get('/', function(req, res, next) {
 		lower			: "1", //restaurantsModel.find({},{"grades.score":1}).sort({"grades.score":1}).limit(1)
 		upper			: restaurantsModel.find({},{"grades.score":1}).sort({"grades.score":-1}).limit(1),
 		"cuisine" 		: cuisine,
-		"borough"		: borough
+		"borough"		: borough,
+		"grade"			: grade
 	}).then(function(results) {
 		//res.json(results);
 	    res.render('index', results);
