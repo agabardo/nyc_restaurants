@@ -1,3 +1,6 @@
+/***************************************
+* Google Maps things...
+***************************************/
 $(document).ready(initialize);
 var MyMap;
 var bounds = new google.maps.LatLngBounds();
@@ -44,3 +47,19 @@ function addMarker(lat, lng, title) {
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);
 }
+
+/***************************************
+* Other things...
+***************************************/
+$(document).ready(function(){
+	$("#info_grades").hide();
+});
+
+function show_info(theDiv){
+	$("#"+theDiv).show('slow');
+}
+function hide_info(theDiv){
+	$("#"+theDiv).hide();
+}
+
+

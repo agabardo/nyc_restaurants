@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admin = require('./routes/admin');
 var db = require('./model/db');
 var restaurants = require('./model/restaurants');
 
@@ -40,12 +41,12 @@ app.use(function(req, res, next) {
 
 
 //Cache
-/*
+
 app.use(function(req, res, next){
    res.setHeader("Cache-Control", "public, max-age=2592000");//Cache de 1 dia
    res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
    next();
-});*/
+});
 
 // error handlers
 
