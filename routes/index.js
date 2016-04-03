@@ -5,8 +5,8 @@ function mergeJsObjects(obj, src) {
 
 var express = require('express'), router = express.Router(), mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
-methodOverride = require('method-override');
-var Promise = require('bluebird');
+methodOverride = require('method-override'),
+Promise = require('bluebird');
 
 router.post('/', function(req, res, next){
 	var filter = {$text:{$search: req.body.search}};

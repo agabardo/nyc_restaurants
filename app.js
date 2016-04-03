@@ -31,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,12 +42,12 @@ app.use(function(req, res, next) {
 
 
 //Cache
-
+/*
 app.use(function(req, res, next){
    res.setHeader("Cache-Control", "public, max-age=2592000");//Cache de 1 dia
    res.setHeader("Expires", new Date(Date.now() + 2592000000).toUTCString());
    next();
-});
+});*/
 
 // error handlers
 
