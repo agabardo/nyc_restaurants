@@ -1,3 +1,9 @@
+/**
+ * Node.JS project now will be integrated with Angular.JS
+ * @param obj
+ * @param src
+ * @returns
+ */
 function mergeJsObjects(obj, src) {
     Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
     return obj;
