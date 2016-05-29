@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--script src="http://maps.googleapis.com/maps/api/js"></script-->
-<script>
-	/*
-	function initialize() {
-		var mapProp = {
-			center : new google.maps.LatLng(40.758983, -73.985069),
-			zoom : 15,
-			mapTypeId : google.maps.MapTypeId.ROADMAP
-		};
-		var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-		
-		var myLatLng = {lat: 40.758983, lng: -73.985069};
-		var marker=new google.maps.Marker({map:map, position:myLatLng, title:"Hello World!"});
-		
-		
-		
-		
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
-	*/
-	
-</script>
-<title><%= eventData.titulo %></title>
+<title><%= title %></title>
 </head>
-<body onload="teste()">
-	<%= eventData.dados %>
+<body>
+	<div ng-app="nycRestaurants" ng-controller="myController">
+	{{1+2}}
 	<ul>
-		<% eventData.restaurants.forEach(function(restaurant) { %>
-		<li><%= restaurant.name %></li> <% }); %>
-	</ul>
+        <li ng-repeat="x in products">{{x}}</li>
+    </ul>
+	</div>
+	
+	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
