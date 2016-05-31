@@ -52,7 +52,8 @@ function addMarker(lat, lng, title) {
 * Other things...
 ***************************************/
 $(document).ready(function(){
-	$("#info_grades").hide();
+	//$("#info_grades").hide();
+	initialize();
 });
 
 function show_info(theDiv){

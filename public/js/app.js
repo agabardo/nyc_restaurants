@@ -1,4 +1,9 @@
-var app = angular.module("nycRestaurants", []); 
-app.controller("myController", function($scope) {
-    $scope.products = ["Milk", "Bread", "Cheese"];
+var app = angular.module("nycRestaurants", []);
+
+app.controller("myController", function($scope , $http) {
+	
+	$scope.products = ["Milk", "Bread", "Cheese"];
+    $http.get('http://localhost:3000/borough').success(function(data) {
+    	$scope.borough = data;
+    });
 });

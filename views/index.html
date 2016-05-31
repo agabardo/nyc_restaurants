@@ -28,7 +28,7 @@
                 <div class="dropdown">
 				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by borough <span class="caret"></span></button>
   				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
-				   <li ng-repeat="x in products"><a href="#{{x}}">{{x}}</a></li>
+				   <li ng-repeat="x in borough"><a href="#{{x}}">{{x}}</a></li>
 				  </ul>
 				</div>
 				<br/>
@@ -50,9 +50,7 @@
 	
 	
 	<div class="container">
-
         <hr>
-
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -61,12 +59,13 @@
                 </div>
             </div>
         </footer>
-
     </div>
 	
 	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
 	<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA"></script>
+	<script type="text/javascript" src="./js/custom.js"></script>
 </body>
 </html>
