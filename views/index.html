@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><%= title %></title>
+	<title><%= title %></title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/shop-item.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The list of restaurants in New York, demo website made with MongoDB, Express, Angular and Node.JS (MEAN)">
+    <meta name="author" content="@agabardo - A. C. Gabardo">
 </head>
 <body>
-	<div ng-app="nycRestaurants" ng-controller="myController">
-	{{1+2}}
-	<ul>
-        <li ng-repeat="x in products">{{x}}</li>
-    </ul>
+	
+	<div class="container" ng-app="nycRestaurants"  ng-controller="myController">
+		<div class="row">
+
+            <div class="col-md-3">
+                <p class="lead">NYC Restaurants</p>
+                
+                <!-- Place the search here -->
+                <div class="input-group">
+			      <input type="text" class="form-control" placeholder="Search for...">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="button">Go!</button>
+			      </span>
+			    </div>
+                <br/>
+                <!-- Place the borough menu here -->
+                <div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by borough <span class="caret"></span></button>
+  				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
+				   <li ng-repeat="x in products"><a href="#{{x}}">{{x}}</a></li>
+				  </ul>
+				</div>
+				<br/>
+				<!-- Place the cuisines menu here -->
+                <div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by cusine <span class="caret"></span></button>
+  				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
+				   <li ng-repeat="x in products"><a href="#{{x}}">{{x}}</a></li>
+				  </ul>
+				</div>
+				
+			</div>
+			
+			<div class="col-md-9">
+				<div id="map"></div>
+			</div>
+		</div>          
 	</div>
+	
+	
+	<div class="container">
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; <%= title %> 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
 	
 	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
+	<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 </body>
 </html>
