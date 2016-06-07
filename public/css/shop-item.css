@@ -40,3 +40,13 @@ footer {
 	height: 450px;
 	border:red solid 1px;
 }
+
+.myDropdown {
+    width:100%;
+    max-width: 100%;
+}
+
+.myDropdown option{
+	padding: 10px;
+	height: 25px;
+}

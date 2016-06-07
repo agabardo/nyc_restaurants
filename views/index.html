@@ -24,27 +24,48 @@
 			      </span>
 			    </div>
                 <br/>
-                <!-- Place the borough menu here -->
-                <div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by borough <span class="caret"></span></button>
-  				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
-				   <li ng-repeat="b in borough" ng-model="dropdownMenu1"><a href="#{{b}}">{{b}}</a></li>
-				  </ul>
-				</div>
+                
+                Browse by Borough: <span ng-bind="dropdownBorough">all</span>
+				<select name="dropdownBorough" ng-model="dropdownBorough" class="myDropdown form-control">
+				<option>Browse by borough</option>
+				   <option ng-repeat="b in borough" value="{{b}}">{{b}}</option>
+				</select>
 				<br/>
-				<!-- Place the cuisines menu here -->
-                <div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by cusine <span class="caret"></span></button>
-  				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
-				   <li ng-repeat="cuisine in cuisines"><a href="#{{cuisine}}">{{cuisine}}</a></li>
-				  </ul>
-				</div>
 				
+				Browse by cuisine: <span ng-bind="dropdownCuisines">all</span>
+                <select name="dropdownCuisines" ng-model="dropdownCuisines" class="myDropdown form-control">
+				<option>Browse by cuisine</option>
+				   <option ng-repeat="cuisine in cuisines" value="{{cuisine}}">{{cuisine}}</option>
+				</select>
+				<br/>
+				
+				Browse by grade: <span ng-bind="dropdownGrades">all</span>
+                <select name="dropdownGrades" ng-model="dropdownGrades" class="myDropdown form-control">
+				<option>Browse by grade</option>
+				   <option ng-repeat="grade in grades" value="{{grade}}">{{grade}}</option>
+				</select>
+				<br/>
+				
+				<input class='btn fullwidth btn-default' type="submit" value="Filter"/>
 			</div>
 			
 			<div class="col-md-9">
 				<div id="map"></div>
+				
+				<table border="1" width="100%">
+					<thead>
+						<tr><th>Restaurant Name</th></tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="restaurant in restaurants">
+							<td>{{restaurant.name}}</td>
+						</tr>
+					</tbody>
+				</table>
+				
 			</div>
+			
+			
 		</div>          
 	</div>
 	

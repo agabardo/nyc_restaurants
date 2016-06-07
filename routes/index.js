@@ -118,14 +118,42 @@ router.get('/cuisine', function(req, res, next) {
     });
 });
 
+router.get('/grades', function(req, res, next) {
+	var restaurantsModel = mongoose.model('Restaurants');
+	restaurantsModel.distinct("grades.grade", function(err, grades) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(grades);
+        }
+    });
+});
+
+
+router.get('/initialList', function(req, res, next) {
+	var restaurantsModel = mongoose.model('Restaurants');
+	var filter = {};
+	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
+	restaurantsModel.find(filter,restaurant_fields).limit(100).then(function(err, restaurants) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(restaurants);
+        }
+    });
+});
+
+
 router.get('/', function(req, res, next){
+	var restaurantsModel = mongoose.model('Restaurants');
+	
 	Promise.promisifyAll(mongoose);
 	Promise.props({
 		title 			: 'NYC Restaurants',
 		//boroughs_list	: restaurantsModel.distinct("borough").execAsync(),
 		//cuisines_list	: restaurantsModel.distinct("cuisine").execAsync(),
 		//grades			: restaurantsModel.distinct("grades.grade").execAsync(),
-		//restaurants		: restaurantsModel.find(filter,restaurant_fields).limit(limit).execAsync(),
+		//restaurants		: restaurantsModel.find(filter,restaurant_fields).limit(100).execAsync(),
 		//lower			: "1", //restaurantsModel.find({},{"grades.score":1}).sort({"grades.score":1}).limit(1)
 		//upper			: restaurantsModel.find({},{"grades.score":1}).sort({"grades.score":-1}).limit(1),
 		//"cuisine" 		: cuisine,
