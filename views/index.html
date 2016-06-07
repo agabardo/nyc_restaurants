@@ -28,7 +28,7 @@
                 <div class="dropdown">
 				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by borough <span class="caret"></span></button>
   				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
-				   <li ng-repeat="x in borough"><a href="#{{x}}">{{x}}</a></li>
+				   <li ng-repeat="b in borough" ng-model="dropdownMenu1"><a href="#{{b}}">{{b}}</a></li>
 				  </ul>
 				</div>
 				<br/>
@@ -36,7 +36,7 @@
                 <div class="dropdown">
 				  <button class="btn btn-default dropdown-toggle fullwidth" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Browse by cusine <span class="caret"></span></button>
   				  <ul class="dropdown-menu fullwidth" aria-labelledby="dropdownMenu1">
-				   <li ng-repeat="x in products"><a href="#{{x}}">{{x}}</a></li>
+				   <li ng-repeat="cuisine in cuisines"><a href="#{{cuisine}}">{{cuisine}}</a></li>
 				  </ul>
 				</div>
 				

@@ -107,6 +107,17 @@ router.get('/borough', function(req, res, next) {
     });
 });
 
+router.get('/cuisine', function(req, res, next) {
+	var restaurantsModel = mongoose.model('Restaurants');
+	restaurantsModel.distinct("cuisine", function(err, cuisines) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(cuisines);
+        }
+    });
+});
+
 router.get('/', function(req, res, next){
 	Promise.promisifyAll(mongoose);
 	Promise.props({
