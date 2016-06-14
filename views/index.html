@@ -54,18 +54,21 @@
 				
 				<table border="1" width="100%">
 					<thead>
-						<tr><th>Restaurant Name</th></tr>
+						<tr>
+							<th>Restaurant Name</th>
+							<th>Borough</th>
+							<th>Grade</th>
+						</tr>
 					</thead>
 					<tbody>
 						<tr ng-repeat="restaurant in restaurants">
 							<td>{{restaurant.name}}</td>
+							<td>{{restaurant.borough}}</td>
+							<td>{{restaurant.grades[0].grade}}</td>
 						</tr>
 					</tbody>
 				</table>
-				
 			</div>
-			
-			
 		</div>          
 	</div>
 	
@@ -83,10 +86,10 @@
     </div>
 	
 	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
-	<script type="text/javascript" src="./js/app.js"></script>
 	<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA"></script>
 	<script type="text/javascript" src="./js/custom.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
