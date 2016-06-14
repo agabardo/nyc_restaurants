@@ -42,7 +42,7 @@ function addMarker(lat, lng, title) {
 		title : title,
 		position : point,
 		map : MyMap,
-		icon : "images/marker.png"
+		//icon : "images/marker.png"
 	});
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);

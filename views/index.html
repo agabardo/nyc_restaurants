@@ -52,7 +52,7 @@
 			<div class="col-md-9">
 				<div id="map"></div>
 				
-				<table border="1" width="100%">
+				<table border="0" width="100%">
 					<thead>
 						<tr>
 							<th>Restaurant Name</th>
@@ -61,7 +61,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="restaurant in restaurants">
+						<tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'">
 							<td>{{restaurant.name}}</td>
 							<td>{{restaurant.borough}}</td>
 							<td>{{restaurant.grades[0].grade}}</td>

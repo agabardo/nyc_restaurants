@@ -38,7 +38,7 @@ footer {
 #map{
 	width: 100%;
 	height: 450px;
-	border:red solid 1px;
+	border:DDD solid 1px;
 }
 
 .myDropdown {
@@ -49,4 +49,12 @@ footer {
 .myDropdown option{
 	padding: 10px;
 	height: 25px;
+}
+
+
+.odd {
+  background-color: #FEFEFE;
+}
+.even {
+  background-color: #EFEFEF;
 }
