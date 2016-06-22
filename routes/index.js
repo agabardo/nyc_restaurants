@@ -146,7 +146,7 @@ router.get('/initialList', function(req, res, next) {
 
 router.get('/', function(req, res, next){
 	var restaurantsModel = mongoose.model('Restaurants');
-	
+	console.log("Oi");
 	Promise.promisifyAll(mongoose);
 	Promise.props({
 		title 			: 'NYC Restaurants',

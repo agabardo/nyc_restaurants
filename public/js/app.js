@@ -27,4 +27,10 @@ app.controller("myController", function($scope , $http) {
     	});
     	
     });
+    
+    $scope.submit = function() {
+	    if ($scope.search) {
+	      window.alert($scope.search);
+	    }
+	  };
 });

@@ -17,36 +17,38 @@
                 <p class="lead">NYC Restaurants</p>
                 
                 <!-- Place the search here -->
-                <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Search for...">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default" type="button">Go!</button>
-			      </span>
-			    </div>
-                <br/>
-                
-                Browse by Borough: <span ng-bind="dropdownBorough">all</span>
-				<select name="dropdownBorough" ng-model="dropdownBorough" class="myDropdown form-control">
-				<option>Browse by borough</option>
-				   <option ng-repeat="b in borough" value="{{b}}">{{b}}</option>
-				</select>
-				<br/>
-				
-				Browse by cuisine: <span ng-bind="dropdownCuisines">all</span>
-                <select name="dropdownCuisines" ng-model="dropdownCuisines" class="myDropdown form-control">
-				<option>Browse by cuisine</option>
-				   <option ng-repeat="cuisine in cuisines" value="{{cuisine}}">{{cuisine}}</option>
-				</select>
-				<br/>
-				
-				Browse by grade: <span ng-bind="dropdownGrades">all</span>
-                <select name="dropdownGrades" ng-model="dropdownGrades" class="myDropdown form-control">
-				<option>Browse by grade</option>
-				   <option ng-repeat="grade in grades" value="{{grade}}">{{grade}}</option>
-				</select>
-				<br/>
-				
-				<input class='btn fullwidth btn-default' type="submit" value="Filter"/>
+                <form ng-submit="submit()" ng-controller="myController">
+	                <div class="input-group">
+				      <input type="text" class="form-control" ng-model="search" name="search"  placeholder="Search for...">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">Go!</button>
+				      </span>
+				    </div>
+	                <br/>
+	                
+	                Browse by Borough: <span ng-bind="dropdownBorough">all</span>
+					<select name="dropdownBorough" ng-model="dropdownBorough" class="myDropdown form-control">
+					<option>Browse by borough</option>
+					   <option ng-repeat="b in borough" value="{{b}}">{{b}}</option>
+					</select>
+					<br/>
+					
+					Browse by cuisine: <span ng-bind="dropdownCuisines">all</span>
+	                <select name="dropdownCuisines" ng-model="dropdownCuisines" class="myDropdown form-control">
+					<option>Browse by cuisine</option>
+					   <option ng-repeat="cuisine in cuisines" value="{{cuisine}}">{{cuisine}}</option>
+					</select>
+					<br/>
+					
+					Browse by grade: <span ng-bind="dropdownGrades">all</span>
+	                <select name="dropdownGrades" ng-model="dropdownGrades" class="myDropdown form-control">
+					<option>Browse by grade</option>
+					   <option ng-repeat="grade in grades" value="{{grade}}">{{grade}}</option>
+					</select>
+					<br/>
+					
+					<input class='btn fullwidth btn-default' type="submit" id="submit" value="Filter"/>
+				</form>
 			</div>
 			
 			<div class="col-md-9">
@@ -56,6 +58,7 @@
 					<thead>
 						<tr>
 							<th>Restaurant Name</th>
+							<th>Cuisine</th>
 							<th>Borough</th>
 							<th>Grade</th>
 						</tr>
@@ -63,6 +66,7 @@
 					<tbody>
 						<tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'">
 							<td>{{restaurant.name}}</td>
+							<td>{{restaurant.cuisine}}</td>
 							<td>{{restaurant.borough}}</td>
 							<td>{{restaurant.grades[0].grade}}</td>
 						</tr>
