@@ -1,7 +1,7 @@
 var app = angular.module("nycRestaurants", []);
 
 app.controller("myController", function($scope , $http) {
-	var restaurants = [];
+	//var restaurants = [];
 	
 	$scope.products = ["Milk", "Bread", "Cheese"];
     $http.get('http://localhost:3000/borough').success(function(data) {
@@ -29,8 +29,20 @@ app.controller("myController", function($scope , $http) {
     });
     
     $scope.submit = function() {
+    	
+    	 $http.get('http://localhost:3000/initialList2').success(function(data) {
+    	    	$scope.restaurants = data;
+    	    	for(i=0;i< data.length ;i++){
+        			coords = (data[i].address.coord).split(",");
+        			addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), data[i].name);
+                }
+    	 });
+    	
 	    if ($scope.search) {
 	      window.alert($scope.search);
+	    }
+	    if($scope.dropdownBorough){
+	    	window.alert($scope.dropdownBorough);
 	    }
 	  };
 });

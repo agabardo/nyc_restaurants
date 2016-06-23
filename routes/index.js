@@ -144,6 +144,20 @@ router.get('/initialList', function(req, res, next) {
 });
 
 
+router.get('/initialList2', function(req, res, next) {
+	var restaurantsModel = mongoose.model('Restaurants');
+	var filter = {"borough":"Manhattan"};
+	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
+	restaurantsModel.find(filter,restaurant_fields).limit(10).then(function(err, restaurants) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(restaurants);
+        }
+    });
+});
+
+
 router.get('/', function(req, res, next){
 	var restaurantsModel = mongoose.model('Restaurants');
 	console.log("Oi");
