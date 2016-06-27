@@ -30,11 +30,16 @@ var styleArray = [ {
 function initialize() {
 	var latlng = new google.maps.LatLng(40.751771, -73.988694);
 	var options = {
-		zoom : 20,
+		zoom : 10,
 		center : latlng,
 		styles: styleArray
 	};
 	MyMap = new google.maps.Map(document.getElementById('map'), options);
+}
+
+function redrawMap(){
+	bounds = new google.maps.LatLngBounds();
+	MyMap.setCenter(new google.maps.LatLng(40.751771, -73.988694));
 }
 
 function addMarker(lat, lng, title) {
@@ -48,6 +53,8 @@ function addMarker(lat, lng, title) {
 	markersArray.push(marker);
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);
+	MyMap.panToBounds(bounds)
+	
 }
 
 /***************************************
