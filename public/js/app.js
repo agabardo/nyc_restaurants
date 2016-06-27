@@ -31,7 +31,13 @@ app.controller("myController", function($scope , $http) {
     $scope.submit = function() {
     	
     	 $http.get('http://localhost:3000/initialList2').success(function(data) {
-    	    	$scope.restaurants = data;
+
+    		 	//Cleaning the markers from the map prior to add new ones.
+    		 	for(var i = 0; i < markersArray.length; i++ ){
+    		 		markersArray[i].setMap(null); //markersArray is in the file custom.js.
+    			}
+
+    		 	$scope.restaurants = data;
     	    	for(i=0;i< data.length ;i++){
         			coords = (data[i].address.coord).split(",");
         			addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), data[i].name);

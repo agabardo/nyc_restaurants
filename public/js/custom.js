@@ -4,6 +4,7 @@
 $(document).ready(initialize);
 var MyMap;
 var bounds = new google.maps.LatLngBounds();
+var markersArray = [];
 
 var styleArray = [ {
 	featureType : "all",
@@ -44,6 +45,7 @@ function addMarker(lat, lng, title) {
 		map : MyMap,
 		//icon : "images/marker.png"
 	});
+	markersArray.push(marker);
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);
 }
