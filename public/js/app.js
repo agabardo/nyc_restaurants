@@ -17,7 +17,7 @@ app.controller("myController", function($scope, $http){
 	
 	$scope.loadTable = function(){
 		$scope.currentPage = 1;
-		$scope.pageSize = 10;
+		$scope.pageSize = 20;
 		$http.get('http://localhost:3000/initialList?borough=Brooklyn').success(function(data) {
 	    	$scope.restaurants = data;
 	    	$(document).ready(function(){ //Adding the markers to the Google Maps Map. Map should be loaded first.
@@ -35,6 +35,7 @@ app.controller("myController", function($scope, $http){
 	
 	
 	$scope.applyFilters = function () {
+		$scope.currentPage = 1;
 		url = "";
     	if($scope.dropdownBorough){
     		url = url +"&borough="+$scope.dropdownBorough;

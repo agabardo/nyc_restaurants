@@ -25,6 +25,8 @@
 				      </span>
 				    </div>
                 </form>
+                
+                
                 <form ng-submit="applyFilters()">
 	                Browse by Borough: <span ng-bind="dropdownBorough">all</span>
 					<select name="dropdownBorough" ng-model="dropdownBorough" class="myDropdown form-control">
@@ -64,10 +66,10 @@
 				<table border="0" width="100%">
 					<thead>
 						<tr>
-							<th>Restaurant Name</th>
-							<th>Cuisine</th>
-							<th>Borough</th>
-							<th>Grade</th>
+							<th width='45%'>Restaurant Name</th>
+							<th width='25%'>Cuisine</th>
+							<th width='10%'>Borough</th>
+							<th width='5%'>Grade</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -84,31 +86,13 @@
 							<th colspan="4">
 								<div ng-controller="myController" class="other-controller">
 									<div class="text-center">
-										<dir-pagination-controls boundary-links="true"
-											on-page-change="pageChangeHandler(newPageNumber)">
+										<dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)">
 										<ul class="pagination" ng-if="1 < pages.length || !autoHide">
-											<li ng-if="boundaryLinks"
-												ng-class="{ disabled : pagination.current == 1 }"><a
-												href="" ng-click="setCurrent(1)">&laquo;</a></li>
-											<li ng-if="directionLinks"
-												ng-class="{ disabled : pagination.current == 1 }"><a
-												href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
-											</li>
-											<li
-												ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)"
-												ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
-												<a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber
-													}}</a>
-											</li>
-				
-											<li ng-if="directionLinks"
-												ng-class="{ disabled : pagination.current == pagination.last }">
-												<a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
-											</li>
-											<li ng-if="boundaryLinks"
-												ng-class="{ disabled : pagination.current == pagination.last }">
-												<a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
-											</li>
+											<li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }"><a href="" ng-click="setCurrent(1)">&laquo;</a></li>
+											<li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }"><a href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a></li>
+											<li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }"><a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber}}</a></li>
+											<li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }"><a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a></li>
+											<li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == pagination.last }"><a href="" ng-click="setCurrent(pagination.last)">&raquo;</a></li>
 										</ul>
 										</dir-pagination-controls>
 									</div>
