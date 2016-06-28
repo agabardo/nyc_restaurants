@@ -1,4 +1,4 @@
-var app = angular.module("nycRestaurants", []);
+var app = angular.module("nycRestaurants", ['angularUtils.directives.dirPagination']);
 
 app.controller("myController", function($scope, $http){
 	
@@ -16,6 +16,8 @@ app.controller("myController", function($scope, $http){
 	}
 	
 	$scope.loadTable = function(){
+		$scope.currentPage = 1;
+		$scope.pageSize = 10;
 		$http.get('http://localhost:3000/initialList?borough=Brooklyn').success(function(data) {
 	    	$scope.restaurants = data;
 	    	$(document).ready(function(){ //Adding the markers to the Google Maps Map. Map should be loaded first.

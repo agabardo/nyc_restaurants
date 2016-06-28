@@ -18,14 +18,14 @@
                 
                 <!-- Place the search here -->
                 <form ng-submit="applyFilters()">
-	                <div class="input-group">
+                	<div class="input-group">
 				      <input type="text" class="form-control" ng-model="search" name="search"  placeholder="Search for...">
 				      <span class="input-group-btn">
 				        <button class="btn btn-default" type="button">Go!</button>
 				      </span>
 				    </div>
-	                <br/>
-	                
+                </form>
+                <form ng-submit="applyFilters()">
 	                Browse by Borough: <span ng-bind="dropdownBorough">all</span>
 					<select name="dropdownBorough" ng-model="dropdownBorough" class="myDropdown form-control">
 					<option>Browse by borough</option>
@@ -48,13 +48,18 @@
 					<br/>
 					
 					<input class='btn fullwidth btn-default' type="submit" id="submit" value="Filter"/>
+					
+					<p>Showing {{restaurants.length}} places to eat.</p>
 				</form>
 			</div>
 			
 			<div class="col-md-9">
 				<div id="map"></div>
 				
-				<p>{{myTxt}}</p>
+				<br/>
+					<label for="search">Search witin the results:</label>
+              		<input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+				<br/>
 				
 				<table border="0" width="100%">
 					<thead>
@@ -66,13 +71,51 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'">
+						<!-- tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'"-->
+						<tr dir-paginate="restaurant in restaurants | filter:q | itemsPerPage: pageSize" current-page="currentPage">
 							<td>{{restaurant.name}}</td>
 							<td>{{restaurant.cuisine}}</td>
 							<td>{{restaurant.borough}}</td>
 							<td>{{restaurant.grades[0].grade}}</td>
 						</tr>
 					</tbody>
+					<tfoot>
+						<tr>
+							<th colspan="4">
+								<div ng-controller="myController" class="other-controller">
+									<div class="text-center">
+										<dir-pagination-controls boundary-links="true"
+											on-page-change="pageChangeHandler(newPageNumber)">
+										<ul class="pagination" ng-if="1 < pages.length || !autoHide">
+											<li ng-if="boundaryLinks"
+												ng-class="{ disabled : pagination.current == 1 }"><a
+												href="" ng-click="setCurrent(1)">&laquo;</a></li>
+											<li ng-if="directionLinks"
+												ng-class="{ disabled : pagination.current == 1 }"><a
+												href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+											</li>
+											<li
+												ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)"
+												ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+												<a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber
+													}}</a>
+											</li>
+				
+											<li ng-if="directionLinks"
+												ng-class="{ disabled : pagination.current == pagination.last }">
+												<a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+											</li>
+											<li ng-if="boundaryLinks"
+												ng-class="{ disabled : pagination.current == pagination.last }">
+												<a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+											</li>
+										</ul>
+										</dir-pagination-controls>
+									</div>
+								</div>
+							</th>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>          
@@ -92,10 +135,12 @@
     </div>
 	
 	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
+	<script type="text/javascript" src="./js/dirPagination.js"></script>
 	<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA"></script>
 	<script type="text/javascript" src="./js/custom.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
+	
 </body>
 </html>

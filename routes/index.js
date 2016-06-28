@@ -122,7 +122,7 @@ router.get('/initialList', function(req, res, next) {
 	var restaurantsModel = mongoose.model('Restaurants');
 	
 	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
-	restaurantsModel.find(filter,restaurant_fields).limit(100).then(function(err, restaurants) {
+	restaurantsModel.find(filter,restaurant_fields).limit(1000).then(function(err, restaurants) {
         if (err) {
             res.send(err);
         } else {
