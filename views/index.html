@@ -8,16 +8,16 @@
     <meta name="description" content="The list of restaurants in New York, demo website made with MongoDB, Express, Angular and Node.JS (MEAN)">
     <meta name="author" content="@agabardo - A. C. Gabardo">
 </head>
-<body>
+<body ng-app="nycRestaurants"  ng-controller="myController">
 	
-	<div class="container" ng-app="nycRestaurants"  ng-controller="myController">
+	<div class="container">
 		<div class="row">
 
             <div class="col-md-3">
                 <p class="lead">NYC Restaurants</p>
                 
                 <!-- Place the search here -->
-                <form ng-submit="submit()" ng-controller="myController">
+                <form ng-submit="applyFilters()">
 	                <div class="input-group">
 				      <input type="text" class="form-control" ng-model="search" name="search"  placeholder="Search for...">
 				      <span class="input-group-btn">
@@ -53,6 +53,8 @@
 			
 			<div class="col-md-9">
 				<div id="map"></div>
+				
+				<p>{{myTxt}}</p>
 				
 				<table border="0" width="100%">
 					<thead>
