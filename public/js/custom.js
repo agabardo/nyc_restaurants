@@ -50,6 +50,11 @@ function addMarker(lat, lng, title) {
 		map : MyMap,
 		//icon : "images/marker.png"
 	});
+	
+	marker.addListener('click', function() {
+		window.alert(title);
+	});
+	
 	markersArray.push(marker);
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);
