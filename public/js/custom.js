@@ -52,8 +52,13 @@ function addMarker(lat, lng, title, id) {
 		icon : "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
 	});
 	
+	var contentString = '<div id="content">'+title+'</div>';
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
+	
 	marker.addListener('click', function() {
-		window.alert(title);
+		infowindow.open(MyMap, marker);
 	});
 	
 	marker.addListener('mouseover', function(){
