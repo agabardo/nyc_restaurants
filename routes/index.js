@@ -101,11 +101,8 @@ router.get('/grades', function(req, res, next) {
     });
 });
 
-
-router.get('/initialList', function(req, res, next) {
-	
+router.get('/initialList', function(req, res, next){
 	limit = 100;
-	
 	var filter = {};
 	if(req.query.borough && req.query.borough != "All"){
 		borough = req.query.borough;
@@ -123,9 +120,7 @@ router.get('/initialList', function(req, res, next) {
 		filter = mergeJsObjects(filterB,filter); //Temporary...
 		limit = null;
 	}
-	
 	var restaurantsModel = mongoose.model('Restaurants');
-	
 	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
 	restaurantsModel.find(filter,restaurant_fields).limit(limit).then(function(err, restaurants) {
         if (err) {
