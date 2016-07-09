@@ -54,7 +54,28 @@ footer {
 
 .odd {
   background-color: #FEFEFE;
+  border:transparent solid 1px;
+  padding-top: 1px;
+  margin-top: 1px;
 }
 .even {
   background-color: #EFEFEF;
+  border:transparent solid 1px;
+  padding-top: 1px;
+  margin-top: 1px;
+}
+
+.background-color, .odd:hover, .even:hover{
+	border:#DA251D solid 1px;
+	color:red;
+}
+
+..background-color td{
+	border-top:#DA251D solid 1px;
+}
+
+
+.background-color-normal{
+	border:transparent solid 1px;
+	color:black;
 }

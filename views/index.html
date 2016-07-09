@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The list of restaurants in New York, demo website made with MongoDB, Express, Angular and Node.JS (MEAN)">
     <meta name="author" content="@agabardo - A. C. Gabardo">
+    <meta http-equiv="Cache-control" content="public">
 </head>
 <body ng-app="nycRestaurants"  ng-controller="myController">
 	
@@ -75,7 +76,7 @@
 					</thead>
 					<tbody>
 						<!-- tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'"-->
-						<tr ng-class-odd="'odd'" ng-class-even="'even'" dir-paginate="restaurant in restaurants | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+						<tr id="{{restaurant._id}}" onmouseover='highlightMarker(this)' onmouseout='outshineMarker(this)' ng-class-odd="'odd'" ng-class-even="'even'" dir-paginate="restaurant in restaurants | filter:q | itemsPerPage: pageSize" current-page="currentPage">
 							<td>{{restaurant.name}}</td>
 							<td>{{restaurant.address.zipcode}} - {{restaurant.address.street}}</td>
 							<td>{{restaurant.cuisine}}</td>
