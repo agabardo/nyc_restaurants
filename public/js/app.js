@@ -12,7 +12,7 @@ app.controller("myController", function($scope, $http){
 	    	$scope.grades = data;
 	    });
 	}
-	
+
 	$scope.loadTable = function(){
 		$scope.currentPage = 1;
 		$scope.pageSize = 20;
@@ -28,7 +28,7 @@ app.controller("myController", function($scope, $http){
 	}
 	$scope.loadData();
 	$scope.loadTable();
-	
+
 	$scope.applyFilters = function () {
 		$scope.currentPage = 1;
 		url = "";
@@ -41,7 +41,10 @@ app.controller("myController", function($scope, $http){
     	if($scope.dropdownGrades){
     		url = url +"&grade="+$scope.dropdownGrades;
 	    }
-    	
+			if($scope.search){
+    		url = url +"&search="+$scope.search;
+	    }
+
     	$http.get('http://localhost:3000/initialList?filter=true'+url).success(function(data) {
     		for(var i = 0; i < markersArray.length; i++ ){
 		 		markersArray[i].setMap(null); //markersArray is in the file custom.js.
@@ -51,9 +54,9 @@ app.controller("myController", function($scope, $http){
     			coords = (data[i].address.coord).split(",");
     			addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), data[i].name);
             }
-    		$scope.$evalAsync(function() { 
+    		$scope.$evalAsync(function() {
     			$scope.restaurants = data;
     		});
-    	 });	
+    	 });
     }
 });
