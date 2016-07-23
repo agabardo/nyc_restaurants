@@ -39,9 +39,9 @@ router.get('/', function(req, res, next) {
 		filterB = {"grades.grade":req.query.grade};
 		filter = mergeJsObjects(filterB,filter); //Temporary...
 	}
-	
+
 	console.log(filter);
-	
+
 	var restaurantsModel = mongoose.model('Restaurants');
 	var restaurant_fields = {zipcode:true, street:true, grades:true, address:true, building:true, restaurant_id:true, name:true, cuisine:true, borough:true};
 	var limit = null;
@@ -104,7 +104,12 @@ router.get('/grades', function(req, res, next) {
 router.get('/initialList', function(req, res, next){
 	limit = 100;
 	var filter = {};
-	if(req.query.borough && req.query.borough != "All"){
+  if(req.query.search){
+    filter.$text = {$search:req.query.search};
+    limit = null;
+
+  }
+  if(req.query.borough && req.query.borough != "All"){
 		borough = req.query.borough;
 		filter.borough = req.query.borough;
 		limit = null;
