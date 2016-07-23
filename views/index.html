@@ -11,24 +11,24 @@
     <meta http-equiv="Cache-control" content="public">
 </head>
 <body ng-app="nycRestaurants" ng-controller="myController">
-	
+
 	<div class="container">
 		<div class="row">
 
             <div class="col-md-3">
                 <p class="lead">NYC Restaurants</p>
-                
+
                 <!-- Place the search here -->
                 <form ng-submit="applyFilters()">
                 	<div class="input-group">
 				      <input type="text" class="form-control" ng-model="search" name="search"  placeholder="Search for...">
 				      <span class="input-group-btn">
-				        <button class="btn btn-default" type="button">Go!</button>
+				        <button class="btn btn-default" type="submit" id="submit">Go!</button>
 				      </span>
 				    </div>
                 </form>
-                
-                
+
+
                 <form ng-submit="applyFilters()">
 	                Browse by Borough: <span ng-bind="dropdownBorough">all</span>
 					<select name="dropdownBorough" ng-model="dropdownBorough" class="myDropdown form-control">
@@ -36,35 +36,35 @@
 					   <option ng-repeat="b in borough" value="{{b}}">{{b}}</option>
 					</select>
 					<br/>
-					
+
 					Browse by cuisine: <span ng-bind="dropdownCuisines">all</span>
 	                <select name="dropdownCuisines" ng-model="dropdownCuisines" class="myDropdown form-control">
 					<option>Browse by cuisine</option>
 					   <option ng-repeat="cuisine in cuisines" value="{{cuisine}}">{{cuisine}}</option>
 					</select>
 					<br/>
-					
+
 					Browse by grade: <span ng-bind="dropdownGrades">all</span>
 	                <select name="dropdownGrades" ng-model="dropdownGrades" class="myDropdown form-control">
 					<option>Browse by grade</option>
 					   <option ng-repeat="grade in grades" value="{{grade}}">{{grade}}</option>
 					</select>
 					<br/>
-					
+
 					<input class='btn fullwidth btn-default' type="submit" id="submit" value="Filter"/>
-					
+
 					<p>Showing {{restaurants.length}} places to eat.</p>
 				</form>
 			</div>
-			
+
 			<div class="col-md-9">
 				<div id="map"></div>
-				
+
 				<br/>
 					<label for="search">Search witin the results:</label>
               		<input ng-model="q" id="search" class="form-control" placeholder="Filter text">
 				<br/>
-				
+
 				<table border="0" width="100%">
 					<thead>
 						<tr>
@@ -106,10 +106,10 @@
 					</tfoot>
 				</table>
 			</div>
-		</div>          
+		</div>
 	</div>
-	
-	
+
+
 	<div class="container">
         <hr>
         <!-- Footer -->
@@ -121,7 +121,7 @@
             </div>
         </footer>
     </div>
-	
+
 	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
 	<script type="text/javascript" src="./js/dirPagination.js"></script>
 	<script type="text/javascript" src="./angular-material/angular-material.min.js"></script>
@@ -130,6 +130,6 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA"></script>
 	<script type="text/javascript" src="./js/custom.js"></script>
 	<script type="text/javascript" src="./js/app.js"></script>
-	
+
 </body>
 </html>
