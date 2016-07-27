@@ -4,7 +4,6 @@
 	<title><%= title %></title>
 	<link href="./css/bootstrap.min.css" rel="stylesheet">
 	<link href="./css/shop-item.css" rel="stylesheet">
-	<link href="./angular-material/angular-material.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The list of restaurants in New York, demo website made with MongoDB, Express, Angular and Node.JS (MEAN)">
     <meta name="author" content="@agabardo - A. C. Gabardo">
@@ -15,7 +14,7 @@
 	<div class="container">
 		<div class="row">
             <div class="col-md-3">
-                <p class="lead">NYC Restaurants</p>
+                <center><p class="lead">NYC Restaurants</p></center>
 
                 <!-- Place the search here -->
                 <form ng-submit="applyFilters()">
@@ -58,16 +57,18 @@
 
 			<div class="col-md-9">
 				<ul class="nav nav-tabs">
-					<li role="presentation" class="active"><a href="/">Home</a></li>
-					<li role="presentation"><a href="javascript:addRestaurant()">Add a new restaurant</a></li>
-					<li role="presentation"><a href="javascript:myPlaces()">My places</a></li>
+					<li role="presentation" class="active"><a href="#tab1default" data-toggle="tab">Home</a></li>
+					<li role="presentation"><a href="#tab2default" data-toggle="tab">Add a new restaurant</a></li>
+					<li role="presentation"><a href="#tab3default" data-toggle="tab">My places</a></li>
 				</ul>
+				<div class="panel-body">
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="tab1default">
 
 				<div id="map"></div>
-
 				<br/>
 					<label for="search">Search witin the results:</label>
-              		<input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+					<input ng-model="q" id="search" class="form-control" placeholder="Filter text">
 				<br/>
 
 				<table border="0" width="100%">
@@ -110,6 +111,13 @@
 						</tr>
 					</tfoot>
 				</table>
+
+			</div>
+			<div class="tab-pane fade" id="tab2default">Default 2</div>
+      <div class="tab-pane fade" id="tab3default">Default 3</div>
+			</div>
+		</div>
+
 			</div>
 		</div>
 	</div>
@@ -129,7 +137,6 @@
 
 	<script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
 	<script type="text/javascript" src="./js/dirPagination.js"></script>
-	<script type="text/javascript" src="./angular-material/angular-material.min.js"></script>
 	<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA"></script>

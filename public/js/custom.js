@@ -51,30 +51,30 @@ function addMarker(lat, lng, title, id) {
 		map : MyMap,
 		icon : "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
 	});
-	
+
 	var contentString = '<div id="content">'+title+'</div>';
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
 	});
-	
+
 	marker.addListener('click', function() {
 		infowindow.open(MyMap, marker);
 	});
-	
+
 	marker.addListener('mouseover', function(){
 		$("#"+id).addClass("background-color");
 		$("#"+id).removeClass("background-color-normal");
 		marker.setAnimation(google.maps.Animation.BOUNCE);
 	});
-	
+
 	marker.addListener('mouseout', function(){
 		$("#"+id).addClass("background-color-normal");
 		$("#"+id).removeClass("background-color");
 		marker.setAnimation(google.maps.Animation.NONE);
 	});
-	
+
 	markersArray.push(marker);
-	
+
 	bounds.extend(point);
 	MyMap.fitBounds(bounds);
 	MyMap.panToBounds(bounds);
@@ -114,5 +114,3 @@ function show_info(theDiv){
 function hide_info(theDiv){
 	$("#"+theDiv).hide();
 }
-
-

@@ -138,6 +138,15 @@ router.get('/initialList', function(req, res, next){
 
 
 router.get('/', function(req, res, next){
+
+  var fs = require("fs");
+  var file = "test.db";
+  var exists = fs.existsSync(file);
+  if(!exists) {
+    console.log("Creating DB file.");
+    fs.openSync(file, "w");
+  }
+
 	var restaurantsModel = mongoose.model('Restaurants');
 	console.log("Oi");
 	Promise.promisifyAll(mongoose);
