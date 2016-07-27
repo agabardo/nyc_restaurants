@@ -11,6 +11,10 @@ This project includes.<br/>
   <li>JQuery</li>
 </ul>
 
+# HOW TO INSTALL
+> This section details how to install this project in a local machine in order
+to test it. Please note that this app was only tested on Mac OSX.
+
 <br/>
 Next milestones
 <ul>
