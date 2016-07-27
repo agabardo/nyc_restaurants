@@ -15,6 +15,7 @@ This project includes.<br/>
 Next milestones
 <ul>
 <li>Add a tree structure to explain the folders in the project.</li>
+<li>Build a simple data-flow graph with the flow of the app.</li>
 <li>Sanitization of unused javascript functions.</li>
 <li>Add an integration with oAuth for login.</li>
 </ul>
