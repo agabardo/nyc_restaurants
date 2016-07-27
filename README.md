@@ -2,5 +2,4 @@
 
 > Spare time project using MongoDB, Express, Angular and Node.JS. Download at your own risk.
 
-<img src="screenshot-28_jun.png">
-
+<img src="screenshot.jpg">
