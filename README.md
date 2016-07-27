@@ -15,6 +15,8 @@ This project includes.<br/>
 > This section details how to install this project in a local machine in order
 to test it. Please note that this app was only tested on Mac OSX.
 
+>> The MongoDB database file.
+
 <br/>
 Next milestones
 <ul>
