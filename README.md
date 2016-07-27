@@ -11,11 +11,12 @@ This project includes.<br/>
   <li>JQuery</li>
 </ul>
 
-# HOW TO INSTALL
+# HOW TO INSTALL (Under construction!)
 > This section details how to install this project in a local machine in order
 to test it. Please note that this app was only tested on Mac OSX.
-
->> The MongoDB database file.
+<ol>
+<li>The MongoDB database file.</li>
+</ol>
 
 <br/>
 Next milestones
