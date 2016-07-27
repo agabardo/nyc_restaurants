@@ -11,4 +11,13 @@ This project includes.<br/>
   <li>JQuery</li>
 </ul>
 
+<br/>
+Next milestones
+<ul>
+<li>Add a tree structure to explain the folders in the project.</li>
+<li>Sanitization of unused javascript functions.</li>
+<li>Add an integration with oAuth for login.</li>
+</ul>
+<br/>
+Current screenshot:<br/>
 <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screenshot.png">
