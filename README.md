@@ -9,6 +9,7 @@ This project includes.<br/>
   <li>Node.js</li>
   <li>Bootstrap</li>
   <li>JQuery</li>
+  <li>NG2-pagination</li>
 </ul>
 
 # HOW TO INSTALL (Under construction!)
@@ -18,12 +19,16 @@ to test it. Please note that this app was only tested on Mac OSX.
 <li>The MongoDB database file.</li>
 </ol>
 
+#HOW TO RUN (Under construction!)
+> Navigate to the project folder and type: <emp>npm start</emp>
+
 <br/>
 Next milestones
 <ul>
 <li>Add a tree structure to explain the folders in the project.</li>
 <li>Build a simple data-flow graph with the flow of the app.</li>
 <li>Sanitization of unused javascript functions.</li>
+<li>Sanitization of unused packages.</li>
 <li>Add an integration with oAuth for login.</li>
 </ul>
 <br/>
