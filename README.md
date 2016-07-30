@@ -16,11 +16,11 @@ This project includes.<br/>
 > This section details how to install this project in a local machine in order
 to test it. Please note that this app was only tested on Mac OSX.
 <ol>
-<li>The MongoDB database file.</li>
+<li><a href='https://raw.githubusercontent.com/mongodb/docs-assets/primer-dataset/primer-dataset.json'>Download</a> and <a href='https://docs.mongodb.com/getting-started/shell/import-data/'>install</a> the MongoDB database file.</li>
 </ol>
 
-#HOW TO RUN (Under construction!)
-> Simply navigate to the project folder and use the command start with Node Package Manager: <emp>$ npm start</emp><br/>
+#HOW TO RUN.
+> Simply navigate to the project folder and use the command 'start' with Node Package Manager: <i>$ npm start</i><br/>
 Tip: Be sure your MongoDB is up and running.
 
 <br/>
