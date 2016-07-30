@@ -1,6 +1,8 @@
 # NYC RESTAURANTS
 
-> Spare time project using MongoDB, Express, Angular and Node.JS. Download at your own risk.<br/>
+> Spare time project using MongoDB, Express, Angular and Node.JS.
+Please, bear in mind that several JavaScript functions can be better write and several pieces of code are used for test only. This is a project for learning purposes and not a commercial project.<br/>
+Download at your own risk.<br/>
 This project includes.<br/>
 <ul>
   <li>MongoDB</li>
