@@ -36,5 +36,5 @@ Next milestones
 </ul>
 <br/>
 
-#CURRENT SCREENSHOT:
+#CURRENT SCREENSHOT
 <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screenshot.png">
