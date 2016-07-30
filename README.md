@@ -20,7 +20,8 @@ to test it. Please note that this app was only tested on Mac OSX.
 </ol>
 
 #HOW TO RUN (Under construction!)
-> Navigate to the project folder and type: <emp>npm start</emp>
+> Simply navigate to the project folder and use the command start with Node Package Manager: <emp>$ npm start</emp><br/>
+Tip: Be sure your MongoDB is up and running.
 
 <br/>
 Next milestones
