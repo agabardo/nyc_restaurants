@@ -9,7 +9,7 @@ This project includes.<br/>
   <li>Node.js</li>
   <li>Bootstrap</li>
   <li>JQuery</li>
-  <li>NG2-pagination</li>
+  <li><a href='https://github.com/michaelbromley/ng2-pagination'>NG2-pagination</a></li>
 </ul>
 
 # HOW TO INSTALL
@@ -20,7 +20,7 @@ to test it. Please note that this app was only tested on Mac OSX.
 <li>Clone the repository: $git clone https://github.com/agabardo/nyc_restaurants.git</li>
 </ol>
 
-#HOW TO RUN.
+#HOW TO RUN
 > Simply navigate to the project folder and use the command 'start' with Node Package Manager: <i>$ npm start</i><br/>
 Tip: Be sure your MongoDB is up and running.<br/><br/>
 To access your project use the address: http://localhost:3000/
