@@ -5,12 +5,12 @@ Please, bear in mind that several JavaScript functions can be better write and s
 Download at your own risk.<br/>
 This project includes.<br/>
 <ul>
-  <li>MongoDB</li>
-  <li>Express JS framework</li>
-  <li>Angular JS framework</li>
-  <li>Node.js</li>
-  <li>Bootstrap</li>
-  <li>JQuery</li>
+  <li>MongoDB - MongoDB shell - v3.2.1</li>
+  <li>Express JS framework - v4.13.1</li>
+  <li>Angular JS framework< - v1.4.5/li>
+  <li>Node.js - v5.5.0</li>
+  <li>Bootstrap - v3.3.6</li>
+  <li>JQuery - v2.2.2</li>
   <li><a href='https://github.com/michaelbromley/ng2-pagination'>NG2-pagination</a></li>
 </ul>
 
