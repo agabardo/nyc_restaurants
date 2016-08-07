@@ -1,5 +1,9 @@
 # NYC RESTAURANTS
 
+<center>
+<img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/public/images/logo.png" alt=""/>
+</center>
+
 > Spare time project using MongoDB, Express, Angular and Node.JS.
 Please, bear in mind that several JavaScript functions can be better write and several pieces of code are used for test only. This is a project for learning purposes and not a commercial project.<br/>
 Please bear in mind that many Javascript functions have partially commented code that can be used for future reference. The project is messy at this point and a sanitization of unused functions and files is mandatory.<br/>
@@ -40,4 +44,4 @@ Next milestones
 <br/>
 
 #CURRENT SCREENSHOT
-<img width="70%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screencapture-localhost-3000-1470562410908.png">
+<img width="100%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screencapture-localhost-3000-1470562410908.png">
