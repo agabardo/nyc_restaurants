@@ -29,7 +29,7 @@ app.controller("myController", function($scope, $http){
 	$scope.loadData();
 	$scope.loadTable();
 
-	$scope.applyFilters = function () {
+	$scope.applyFilters = function(){
 		$scope.currentPage = 1;
 		url = "";
     	if($scope.dropdownBorough){
@@ -59,4 +59,11 @@ app.controller("myController", function($scope, $http){
     		});
     	 });
     }
+
+
+		$scope.addRestaurant = function(){
+			window.alert($scope.name);
+		}
+
+
 });

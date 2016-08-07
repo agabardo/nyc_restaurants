@@ -113,8 +113,20 @@
 				</table>
 
 			</div>
-			<div class="tab-pane fade" id="tab2default">Default 2</div>
-      <div class="tab-pane fade" id="tab3default">Default 3</div>
+			<div class="tab-pane fade" id="tab2default">
+				<h3>Add a new restaurant</h3>
+				<form ng-submit="addRestaurant()">
+					<!-- This form submits its values to the function addRestaurant in the file
+					app.js in the folder public/js. -->
+					<input type="text" class="form-control" ng-model="name" name="name"  placeholder="Restaurant name">
+					<input class='btn fullwidth btn-default' type="submit" id="submit" value="Add restaurant"/>
+				</form>
+			</div>
+      <div class="tab-pane fade" id="tab3default">
+				<h3>My places</h3>
+				The places you have liked.<br/>
+				This is a future feature.
+			</div>
 			</div>
 		</div>
 
