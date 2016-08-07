@@ -40,4 +40,4 @@ Next milestones
 <br/>
 
 #CURRENT SCREENSHOT
-<img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screenshot.png">
+<img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screencapture-localhost-3000-1470562410908">
