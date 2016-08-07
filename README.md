@@ -2,6 +2,7 @@
 
 > Spare time project using MongoDB, Express, Angular and Node.JS.
 Please, bear in mind that several JavaScript functions can be better write and several pieces of code are used for test only. This is a project for learning purposes and not a commercial project.<br/>
+Please bear in mind that many Javascript functions have partially commented code that can be used for future reference. The project is messy at this point and a sanitization of unused functions and files is mandatory.<br/>
 Download at your own risk.<br/>
 This project includes.<br/>
 <ul>
