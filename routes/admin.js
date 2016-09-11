@@ -27,4 +27,11 @@ router.get('/', function(req, res, next) {
 	    res.send(500); // oops - we're even handling errors!
 	});
 });
+
+
+router.post('/addNew', function(req, res, next) {
+	console.log("Oi");
+	res.send("OK");
+});
+
 module.exports = router;

@@ -61,9 +61,24 @@ app.controller("myController", function($scope, $http){
     }
 
 
-		$scope.addRestaurant = function(){
-			window.alert($scope.name);
-		}
+	$scope.addRestaurant = function(){
+		/*
+		window.alert($scope.name);
+		window.alert($scope.building);
+		window.alert($scope.lat);
+		window.alert($scope.long);
+		window.alert($scope.street);
+		window.alert($scope.zipcode);
+		window.alert($scope.add_borough);
+		window.alert($scope.add_cuisine);
+		*/
+		var request = $http({method: "post", url: "http://localhost:3000/admin/addNew", data: {name:$scope.name}}).success(function(data,status){
+			if(data){
+				window.alert(data);
+				window.alert(status);
+			}
+		});
+	}
 
 
 });
