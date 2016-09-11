@@ -109,7 +109,7 @@
               <!-- This form submits its values to the function addRestaurant in the file app.js in the folder public/js. -->
               <label for="name">Restaurant name</label>
               <input type="text" class="form-control" id="name" ng-model="name" required name="name"  placeholder="Restaurant name">
-
+              <br/>
               <fieldset>
                 <legend>Address</legend>
                 <label for="building">Building</label>
@@ -118,10 +118,10 @@
                 <label>Coords</label>
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" class="form-control" ng-model="lat" name="lat"  placeholder="Latitude">
+                    <input type="text" class="form-control" ng-model="lat" name="lat" value="40.763597">
                   </div>
                   <div class="col-md-6">
-    		              <input type="text" class="form-control" ng-model="long" name="long"  placeholder="Longitude">
+    		              <input type="text" class="form-control" ng-model="long" name="long" value="-73.992545">
                   </div>
                 </div>
 
