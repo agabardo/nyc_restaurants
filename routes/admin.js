@@ -30,8 +30,25 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/addNew', function(req, res, next) {
-	console.log(req.body);
-	res.send("OK");
+	var restaurantsModel = mongoose.model('Restaurants');
+	inserted = new restaurantsModel( {
+		"address" : {
+        "street" : req.body.street,
+        "zipcode" : req.body.zipcode,
+        "building" : req.body.building,
+        "coord" : [ req.body.lat, req.body.long ]
+      },
+      "borough" : req.body.borough,
+      "cuisine" : req.body.cuisine,
+      "name" : req.body.name,
+      "restaurant_id" : "4170462033"
+   });
+	
+	inserted.save(function(err) {
+		if (err) throw err;
+			console.log('User created!');
+	});
+	
 });
 
 module.exports = router;
