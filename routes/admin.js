@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/addNew', function(req, res, next) {
-	console.log("Oi");
+	console.log(req.body);
 	res.send("OK");
 });
 
