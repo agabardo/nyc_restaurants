@@ -61,6 +61,9 @@ app.controller("myController", function($scope, $http){
     }
 
 
+	/***
+	 * Receiving data from browser and sending the data to Node.js
+	 */
 	$scope.addRestaurant = function(){
 		
 		postData = {
@@ -76,7 +79,6 @@ app.controller("myController", function($scope, $http){
 		var request = $http({method: "post", url: "http://localhost:3000/admin/addNew", data: postData}).success(function(data,status){
 			if(data){
 				window.alert(data);
-				window.alert(status);
 			}
 		});
 	}

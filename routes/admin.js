@@ -45,9 +45,13 @@ router.post('/addNew', function(req, res, next) {
    });
 	
 	inserted.save(function(err) {
-		if (err){throw err;}else{
+		if (err){
+			throw err;
+			console.log(err);
+		}else{
 			console.log('New restaurant inserted!');
-			res.send("Restaurant " + req.body.name + " successfully inserted!")
+			res.send("Restaurant " + req.body.name + " successfully inserted!");
+			res.send(200);
 		}
 	});
 	
