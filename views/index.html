@@ -11,6 +11,7 @@
 <meta http-equiv="Cache-control" content="public">
 </head>
 <body ng-app="nycRestaurants" ng-controller="myController">
+<div id="topbar"></div>
 <div class="container">
   <div class="row">
     <div class="col-md-3">
@@ -66,21 +67,25 @@
             <table border="0" width="100%">
               <thead>
                 <tr>
-                  <th width='45%'>Restaurant Name</th>
-                  <th width='25%'>Address</th>
-                  <th width='25%'>Cuisine</th>
-                  <th width='10%'>Borough</th>
-                  <th width='5%'>Grade</th>
+                  <th><span class="glyphicon glyphicon-remove btnRemove" aria-hidden="true"></span></th>
+                  <th>Restaurant Name</th>
+                  <th>Address</th>
+                  <th>Cuisine</th>
+                  <th>Borough</th>
+                  <th>Grade</th>
+                  <th><span class="glyphicon glyphicon-heart btnLove" aria-hidden="true"></span></th>
                 </tr>
               </thead>
               <tbody>
                 <!-- tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'"-->
                 <tr id="{{restaurant._id}}" onmouseover='highlightMarker(this)' onmouseout='outshineMarker(this)' ng-class-odd="'odd'" ng-class-even="'even'" dir-paginate="restaurant in restaurants | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+                  <td><a class='btnRemove' href='javascript:delete_restaurant("{{restaurant._id}}")'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
                   <td>{{restaurant.name}}</td>
                   <td>{{restaurant.address.zipcode}} - {{restaurant.address.street}}</td>
                   <td>{{restaurant.cuisine}}</td>
                   <td>{{restaurant.borough}}</td>
                   <td class='centered'>{{restaurant.grades[0].grade}}</td>
+                  <td><a class='btnLove' href='javascript:love_restaurant("{{restaurant._id}}")'><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></td>
                 </tr>
               </tbody>
               <tfoot>
