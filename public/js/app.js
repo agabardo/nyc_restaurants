@@ -61,6 +61,15 @@ app.controller("myController", function($scope, $http){
     }
 
 
+	$scope.deleteRestaurant = function(id){
+		window.alert(id)
+	}
+	
+	$scope.loveRestaurant = function(id){
+		window.alert(id)
+	}
+	
+	
 	/***
 	 * Receiving data from browser and sending the data to Node.js
 	 */

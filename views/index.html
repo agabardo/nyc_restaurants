@@ -79,13 +79,13 @@
               <tbody>
                 <!-- tr ng-repeat="restaurant in restaurants" ng-class-odd="'odd'" ng-class-even="'even'"-->
                 <tr id="{{restaurant._id}}" onmouseover='highlightMarker(this)' onmouseout='outshineMarker(this)' ng-class-odd="'odd'" ng-class-even="'even'" dir-paginate="restaurant in restaurants | filter:q | itemsPerPage: pageSize" current-page="currentPage">
-                  <td><a class='btnRemove' href='javascript:delete_restaurant("{{restaurant._id}}")'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                  <td><a class='btnRemove' href="javascript:void(null)" ng-click="deleteRestaurant(restaurant._id)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
                   <td>{{restaurant.name}}</td>
                   <td>{{restaurant.address.zipcode}} - {{restaurant.address.street}}</td>
                   <td>{{restaurant.cuisine}}</td>
                   <td>{{restaurant.borough}}</td>
                   <td class='centered'>{{restaurant.grades[0].grade}}</td>
-                  <td><a class='btnLove' href='javascript:love_restaurant("{{restaurant._id}}")'><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></td>
+                  <td><a class='btnLove' href="javascript:void(null)" ng-click="loveRestaurant(restaurant._id)"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></td>
                 </tr>
               </tbody>
               <tfoot>
