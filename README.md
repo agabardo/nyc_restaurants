@@ -24,13 +24,13 @@ The project from this branch and beyond has the following organisation. The soft
 <br/>
 <br/>
 <center>
-<img with="70%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.jpg" alt="NYC Mean"/>
+<img width="70%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.jpg" alt="NYC Mean"/>
 </center>
 <br/>
 The data-flow with REST follows the requests and returns as the image below.
 <br/>
 <center>
-<img with="70%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/meanjs-1024x492.png" alt="Mean data-flow"/>
+<img width="70%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/meanjs-1024x492.png" alt="Mean data-flow"/>
 </center>
 
 # HOW TO INSTALL
