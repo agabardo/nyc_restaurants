@@ -1,8 +1,8 @@
 # NYC RESTAURANTS
 ## Please note. This branch is under construction, nothing is working yet.
-<div style='align:center'>
-<img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/public/images/logo.png" alt=""/>
-</div>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/public/images/logo.png" alt=""/>
+</p>
 
 > Spare time project using MongoDB, Express, Angular and Node.JS.
 Please, bear in mind that several JavaScript functions can be better written and several pieces of code are used for test only. This is a project for learning purposes and not a commercial project.<br/>
@@ -23,15 +23,15 @@ This project includes.<br/>
 The project from this branch and beyond has the following organisation. The software used are the MEAN stack (Mongo DB, Express, Angular and Node.JS) including the Twitter Bootstrap for the front-end. The front-end consumes data from Node.JS using a RESTful API. See the image below for more info.
 <br/>
 <br/>
-<center>
+<p align="center">
 <img width="70%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.jpg" alt="NYC Mean"/>
-</center>
+</p>
 <br/><br/>
 The data-flow with REST follows the requests and returns as the image below.
 <br/>
-<center>
+<p align="center">
 <img width="70%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/meanjs-1024x492.png" alt="Mean data-flow"/>
-</center>
+</p>
 
 # HOW TO INSTALL
 > This section details how to install this project in a local machine in order
