@@ -1,6 +1,13 @@
+/**
+* This is the main App file with Angular.js methods and functions.
+**/
 var app = angular.module("nycRestaurants", ['angularUtils.directives.dirPagination']);
 
+/**
+* When the website is loaded.
+**/
 app.controller("myController", function($scope, $http){
+
 	$scope.loadData = function () {
 	    $http.get('http://localhost:3000/borough').success(function(data) {
 	    	$scope.borough = data;
@@ -60,21 +67,22 @@ app.controller("myController", function($scope, $http){
     	 });
     }
 
-
+	//TO DO...
 	$scope.deleteRestaurant = function(id){
 		window.alert(id)
 	}
-	
+
+	//TO DO...
 	$scope.loveRestaurant = function(id){
 		window.alert(id)
 	}
-	
-	
+
+
 	/***
 	 * Receiving data from browser and sending the data to Node.js
 	 */
 	$scope.addRestaurant = function(){
-		
+
 		postData = {
 			'name':$scope.name,
 			'building': $scope.building,
@@ -84,7 +92,7 @@ app.controller("myController", function($scope, $http){
 			'zipcode':$scope.zipcode,
 			'borough':$scope.add_borough,
 			'cuisine':$scope.add_cuisine}
-		
+
 		var request = $http({method: "post", url: "http://localhost:3000/admin/addNew", data: postData}).success(function(data,status){
 			if(data){
 				window.alert(data);
