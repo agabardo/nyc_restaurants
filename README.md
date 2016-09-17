@@ -24,7 +24,7 @@ The project from this branch and beyond has the following organisation. The soft
 <br/>
 <br/>
 <p align="center">
-<img width="75%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.png" alt="NYC Mean"/>
+<img width="100%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.png" alt="NYC Mean"/>
 </p>
 <br/><br/>
 The data-flow with REST follows the requests and returns as the image below.
