@@ -19,6 +19,10 @@ This project includes.<br/>
   <li><a href='https://github.com/michaelbromley/ng2-pagination'>NG2-pagination</a></li>
 </ul>
 
+# THE MEAN STACK
+The project from this branch and beyond has the following organisation. The software used are the MEAN stack (Mongo DB, Express, Angular and Node.JS) including the Twitter Bootstrap for the front-end. The front-end consumes data from Node.JS using a RESTful API. See the image below for more info.
+<img with="100%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.jpg" alt="NYC Mean"/>
+
 # HOW TO INSTALL
 > This section details how to install this project in a local machine in order
 to test it. Please note that this app was only tested on Mac OSX.
