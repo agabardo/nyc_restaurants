@@ -42,12 +42,15 @@ to test it. Please note that this app was only tested on Mac OSX.
 </ol>
 
 #HOW TO RUN
+##Starting your Node.JS local server
 > Simply navigate to the project folder and use the command 'start' with Node Package Manager: <i>$ npm start</i><br/>
 Tip: Be sure your MongoDB is up and running.<br/><br/>
 To access your project use the address: http://localhost:3000/
+##Starting your local webserver
+TO DO!.
 
 <br/>
-Next milestones
+##Next milestones
 <ul>
 <li>Add a tree structure to explain the folders in the project.</li>
 <li>Build a simple data-flow graph with the flow of the app.</li>
