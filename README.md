@@ -42,10 +42,12 @@ to test it. Please note that this app was only tested on Mac OSX.
 </ol>
 
 #HOW TO RUN
+Beware that in this structure we actually need two webservers to run the app. A Node.JS webserver to provide the RESTful API and a HTTP webserver to consume the application.
 ##Starting your Node.JS local server
 > Simply navigate to the project folder and use the command 'start' with Node Package Manager: <i>$ npm start</i><br/>
 Tip: Be sure your MongoDB is up and running.<br/><br/>
 To access your project use the address: http://localhost:3000/
+
 ##Starting your local webserver
 TO DO!.
 
