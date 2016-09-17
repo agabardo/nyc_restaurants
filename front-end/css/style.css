@@ -1,0 +1,42 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #FEFEFE;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover{
+	color: #000000;
+}
+
+#map {
+    width: 100%;
+    height: 450px;
+    background-color: #CCC;
+}
+
+.logo{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.100-percent{
+	width: 100%;
+}
+
+.centered{
+	text-align: center;
+}
+.btnRemove{
+	color:gray;
+}
+.btnRemove:hover{
+	color:red;
+}
