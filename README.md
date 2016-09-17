@@ -1,8 +1,8 @@
 # NYC RESTAURANTS
 ## Please note. This branch is under construction, nothing is working yet.
-<span style='align:center'>
+<div style='align:center'>
 <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/public/images/logo.png" alt=""/>
-</span>
+</div>
 
 > Spare time project using MongoDB, Express, Angular and Node.JS.
 Please, bear in mind that several JavaScript functions can be better written and several pieces of code are used for test only. This is a project for learning purposes and not a commercial project.<br/>
