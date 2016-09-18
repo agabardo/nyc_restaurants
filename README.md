@@ -16,7 +16,7 @@ This project includes.<br/>
       <li>Bootstrap - v3.3.6</li>
       <li>JQuery - v2.2.2</li>
     </ol></li>
-  <li>
+  <li>RESTful API
     <ol>
       <li>MongoDB - MongoDB shell - v3.2.1</li>
       <li>Express JS framework - v4.13.1</li>
