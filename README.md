@@ -10,12 +10,20 @@ Please bear in mind that many Javascript functions have partially commented code
 Download at your own risk.<br/>
 This project includes.<br/>
 <ul>
-  <li>MongoDB - MongoDB shell - v3.2.1</li>
-  <li>Express JS framework - v4.13.1</li>
-  <li>Angular JS framework< - v1.4.5/li>
-  <li>Node.js - v5.5.0</li>
-  <li>Bootstrap - v3.3.6</li>
-  <li>JQuery - v2.2.2</li>
+  <li>Front end
+    <ol>
+      <li>Angular JS framework< - v1.4.5/li>
+      <li>Bootstrap - v3.3.6</li>
+      <li>JQuery - v2.2.2</li>
+    </ol></li>
+  <li>
+    <ol>
+      <li>MongoDB - MongoDB shell - v3.2.1</li>
+      <li>Express JS framework - v4.13.1</li>
+      <li>Node.js - v5.5.0</li>
+    </ol></li>
+  </ul>
+
   <li><a href='https://github.com/michaelbromley/ng2-pagination'>NG2-pagination</a></li>
 </ul>
 
