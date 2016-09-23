@@ -12,7 +12,7 @@ This project includes.<br/>
 <ul>
   <li>Front end
     <ol>
-      <li>Angular JS framework< - v1.4.5/li>
+      <li>Angular JS framework - v1.4.5</li>
       <li>Bootstrap - v3.3.6</li>
       <li>JQuery - v2.2.2</li>
     </ol></li>
