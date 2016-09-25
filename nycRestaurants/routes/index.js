@@ -82,12 +82,7 @@ router.get('/initialList', function(req, res, next){
 router.post('/addNew', function(req, res, next) {
   var restaurantsModel = mongoose.model('Restaurants');
 
-  console.log('New restaurant inserted!');
-  res.send("Restaurant " + req.body.name + " successfully inserted!");
-  res.send(200);
-  /*
-
-	inserted = new restaurantsModel( {
+  inserted = new restaurantsModel( {
 		"address" : {
         "street" : req.body.street,
         "zipcode" : req.body.zipcode,
@@ -101,15 +96,14 @@ router.post('/addNew', function(req, res, next) {
    });
 
 	inserted.save(function(err) {
-		if (err){
-			throw err;
+		if(err){
 			console.log(err);
 		}else{
 			console.log('New restaurant inserted!');
 			res.send("Restaurant " + req.body.name + " successfully inserted!");
-			res.send(200);
+			//res.send(200);
 		}
-	});*/
+	});
 });
 
 
