@@ -76,4 +76,41 @@ router.get('/initialList', function(req, res, next){
     });
 });
 
+/***
+* Adding a new restaurant.
+*/
+router.post('/addNew', function(req, res, next) {
+  var restaurantsModel = mongoose.model('Restaurants');
+
+  console.log('New restaurant inserted!');
+  res.send("Restaurant " + req.body.name + " successfully inserted!");
+  res.send(200);
+  /*
+
+	inserted = new restaurantsModel( {
+		"address" : {
+        "street" : req.body.street,
+        "zipcode" : req.body.zipcode,
+        "building" : req.body.building,
+        "coord" : [ req.body.lat, req.body.long ]
+      },
+      "borough" : req.body.borough,
+      "cuisine" : req.body.cuisine,
+      "name" : req.body.name,
+      "restaurant_id" : "4170462033"
+   });
+
+	inserted.save(function(err) {
+		if (err){
+			throw err;
+			console.log(err);
+		}else{
+			console.log('New restaurant inserted!');
+			res.send("Restaurant " + req.body.name + " successfully inserted!");
+			res.send(200);
+		}
+	});*/
+});
+
+
 module.exports = router;

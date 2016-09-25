@@ -93,7 +93,7 @@ app.controller("myController", function($scope, $http){
 			'borough':$scope.add_borough,
 			'cuisine':$scope.add_cuisine}
 
-		var request = $http({method: "post", url: "http://localhost:3000/admin/addNew", data: postData}).success(function(data,status){
+		var request = $http({method: "post", url: "http://localhost:3000/addNew", data: postData}).success(function(data,status){
 			if(data){
 				window.alert(data);
 			}

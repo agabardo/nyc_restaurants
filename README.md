@@ -1,5 +1,5 @@
 # NYC RESTAURANTS
-## Please note. This branch is under construction, nothing is working yet.
+## Please note. This branch is under construction, partially working, some functions need to be finished.
 <p align="center">
   <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/public/images/logo.png" alt=""/>
 </p>
