@@ -106,4 +106,17 @@ router.post('/addNew', function(req, res, next) {
 });
 
 
+router.delete("/delete/:id", function(req, res){
+  var restaurantsModel = mongoose.model('Restaurants');
+
+  restaurantsModel.remove({ _id: id }, function(err) {
+    if (!err) {
+            message.type = 'notification!';
+    }
+    else {
+            message.type = 'error';
+    }
+});
+});
+
 module.exports = router;
