@@ -1,11 +1,10 @@
 var express = require('express'), router = express.Router(), mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
-methodOverride = require('method-override'),
-Promise = require('bluebird');
+methodOverride = require('method-override');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'NYC Restaurants' });
 });
 
 router.get('/borough', function(req, res, next){
