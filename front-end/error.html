@@ -1,0 +1,27 @@
+<html>
+  <head>
+  <title>Ohhhh! <%=error.status%></title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/shop-item.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,400,300' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The list of restaurants in New York, demo website made with MongoDB, Express, Angular and Node.JS (MEAN)">
+  <meta name="author" content="@agabardo - A. C. Gabardo">
+  <meta http-equiv="Cache-control" content="public">
+  </head>
+<body>
+  <body ng-app="nycRestaurants" ng-controller="myController">
+  <div id="topbar"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><%=error.status%></h1>
+        <h2>Something went wrong.</h2>
+        <p><%=error.stack%></p>
+        <br/>
+        <a href="javascript:history.go(-1)">Go back</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

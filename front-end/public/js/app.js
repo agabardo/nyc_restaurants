@@ -69,12 +69,16 @@ app.controller("myController", function($scope, $http){
 
 	//TO DO...
 	$scope.deleteRestaurant = function(id){
-		window.alert(id)
+		window.alert(id);
+		var request = $http({method: "delete", url: "http://localhost:3000/delete/"+id}).success(function(data,status){
+			window.alert(status);
+		});
 	}
 
 	//TO DO...
 	$scope.loveRestaurant = function(id){
-		window.alert(id)
+		window.alert(id);
+
 	}
 
 
