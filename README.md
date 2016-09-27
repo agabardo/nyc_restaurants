@@ -1,7 +1,7 @@
 # NYC RESTAURANTS
 ## Please note. This branch is under construction, partially working, some functions need to be finished.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/public/images/logo.png" alt=""/>
+  <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/front-end/public/images/logo.png" alt=""/>
 </p>
 
 > Spare time project using MongoDB, Express, Angular and Node.JS.
@@ -32,13 +32,13 @@ The project from this branch and beyond has the following organisation. The soft
 <br/>
 <br/>
 <p align="center">
-<img width="100%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/nyc-mean-js.png" alt="NYC Mean"/>
+<img width="100%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/images-readme-md/nyc-mean-js.png" alt="NYC Mean"/>
 </p>
 <br/><br/>
 The data-flow with REST follows the requests and returns as the image below.
 <br/>
 <p align="center">
-<img width="60%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/RESTful-nodejs/images-readme-md/meanjs-1024x492.png" alt="Mean data-flow"/>
+<img width="60%" align="center" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/images-readme-md/meanjs-1024x492.png" alt="Mean data-flow"/>
 </p>
 
 # HOW TO INSTALL
@@ -69,5 +69,5 @@ To access your project use the address: http://localhost:3000/
 <br/>
 
 #CURRENT SCREENSHOTS
-<img width="100%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screencapture-localhost-3000-1470562410908B.png">
-<img width="100%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/screencapture-localhost-3000-1470562410908C.png">
+<img width="100%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/images-readme-md/screencapture-localhost-3000-1470562410908.png">
+<img width="100%" src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/images-readme-md/screencapture-localhost-3000-1470562410908C.png">
