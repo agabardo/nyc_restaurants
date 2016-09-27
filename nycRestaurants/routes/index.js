@@ -7,8 +7,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'NYC Restaurants' });
 });
 
+/***
+ * Getting the list of borough.
+ * Used to build the filter form.
+ */
 router.get('/borough', function(req, res, next){
-
   var restaurantsModel = mongoose.model('Restaurants');
 	restaurantsModel.distinct("borough", function(err, borough) {
         if (err) {
@@ -19,6 +22,10 @@ router.get('/borough', function(req, res, next){
     });
 });
 
+/***
+ * Getting the list of cuisines.
+ * Used to build the filter form.
+ */
 router.get('/cuisine', function(req, res, next) {
 	var restaurantsModel = mongoose.model('Restaurants');
 	restaurantsModel.distinct("cuisine", function(err, cuisines) {
@@ -30,6 +37,10 @@ router.get('/cuisine', function(req, res, next) {
     });
 });
 
+/**
+ * Getting the list of possible grades for restaurants.
+ * Used to build the filter form.
+ */
 router.get('/grades', function(req, res, next) {
 	var restaurantsModel = mongoose.model('Restaurants');
 	restaurantsModel.distinct("grades.grade", function(err, grades) {
@@ -41,6 +52,11 @@ router.get('/grades', function(req, res, next) {
     });
 });
 
+/**
+ * This function get the list of restaurants when the main app is loaded.
+ * You can change what you  want to see in the front page by changing the
+ * arguments in the filter on this list.
+ */
 router.get('/initialList', function(req, res, next){
 	limit = 100;
 	var filter = {};
@@ -105,10 +121,12 @@ router.post('/addNew', function(req, res, next) {
 	});
 });
 
-
+/**
+ * This method is currently not working. 
+ * Needs to be reimplemented.
+ */
 router.delete("/delete/:id", function(req, res){
   var restaurantsModel = mongoose.model('Restaurants');
-
   restaurantsModel.remove({ _id: id }, function(err) {
     if (!err) {
             message.type = 'notification!';
