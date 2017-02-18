@@ -1,7 +1,6 @@
 "use strict";
 
-var MongoError = require('mongodb-core').MongoError,
-  f = require('util').format;
+var MongoError = require('mongodb-core').MongoError
 
 var shallowClone = function(obj) {
   var copy = {};
@@ -92,8 +91,9 @@ var checkCollectionName = function checkCollectionName (collectionName) {
 var handleCallback = function(callback, err, value1, value2) {
   try {
     if(callback == null) return;
-    if(value2) return callback(err, value1, value2);
-    return callback(err, value1);
+    if(callback) {
+      return value2 ? callback(err, value1, value2) :  callback(err, value1);
+    }
   } catch(err) {
     process.nextTick(function() { throw err; });
     return false;
@@ -270,7 +270,7 @@ var filterOptions = function(options, names) {
 }
 
 // Object.assign method or polyfille
-var assign = Object.assign ? Object.assign : function assign(target, firstSource) {
+var assign = Object.assign ? Object.assign : function assign(target) {
   if (target === undefined || target === null) {
     throw new TypeError('Cannot convert first argument to object');
   }

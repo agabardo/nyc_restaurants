@@ -1,4 +1,6 @@
-var express = require('express'), router = express.Router(), mongoose = require('mongoose'),
+var express = require('express'),
+router = express.Router(),
+mongoose = require('mongoose'),
 bodyParser = require('body-parser'),
 methodOverride = require('method-override');
 
@@ -27,6 +29,7 @@ router.get('/borough', function(req, res, next){
  * Used to build the filter form.
  */
 router.get('/cuisine', function(req, res, next) {
+
 	var restaurantsModel = mongoose.model('Restaurants');
 	restaurantsModel.distinct("cuisine", function(err, cuisines) {
         if (err) {
@@ -122,19 +125,20 @@ router.post('/addNew', function(req, res, next) {
 });
 
 /**
- * This method is currently not working. 
- * Needs to be reimplemented.
+ * Method used to remove/delete a restaurant
  */
-router.delete("/delete/:id", function(req, res){
-  var restaurantsModel = mongoose.model('Restaurants');
-  restaurantsModel.remove({ _id: id }, function(err) {
-    if (!err) {
-            message.type = 'notification!';
-    }
-    else {
-            message.type = 'error';
-    }
-});
+router.delete("/delete", function(req, res){
+    //console.log("Teste "+req.body.id);
+    //res.send(req.body.id);
+    var restaurantsModel = mongoose.model('Restaurants');
+    restaurantsModel.remove({_id: req.body.id }, function(err) {
+      if (!err) {
+        res.send("Restaurant " + req.body.id + " successfully deleted!");
+      }
+      else {
+        res.send("Not possible to delete Restaurant " + req.body.id + "!");
+      }
+    });
 });
 
 module.exports = router;

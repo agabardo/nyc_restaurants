@@ -37,13 +37,9 @@
  *
  * @class
  * @param {string} mode The ReadPreference mode as listed above.
- * @param {array} tags An object representing read preference tags.
+ * @param {array|object} tags An object representing read preference tags.
  * @param {object} [options] Additional read preference options
- * @param {number} [options.maxStalenessMS] Max Secondary Read Stalleness in Miliseconds
- * @property {string} mode The ReadPreference mode.
- * @property {array} tags The ReadPreference tags.
- * @property {object} options Additional read preference options
- * @property {number} maxStalenessMS MaxStalenessMS value for the read preference
+ * @param {number} [options.maxStalenessSeconds] Max Secondary Read Stalleness in Seconds
  * @return {ReadPreference} a ReadPreference instance.
  */
 var ReadPreference = function(mode, tags, options) {
@@ -58,13 +54,15 @@ var ReadPreference = function(mode, tags, options) {
 
   // If no tags were passed in
   if(tags && typeof tags == 'object' && !Array.isArray(tags)) {
-    this.options = tags;
-    this.tags = null;
+    if(tags.maxStalenessSeconds) {
+      this.options = tags;
+      this.tags = null;
+    }
   }
 
-  // Add the maxStalenessMS value to the read Preference
-  if(this.options && this.options.maxStalenessMS) {
-    this.maxStalenessMS = this.options.maxStalenessMS;
+  // Add the maxStalenessSeconds value to the read Preference
+  if(this.options && this.options.maxStalenessSeconds) {
+    this.maxStalenessSeconds = this.options.maxStalenessSeconds;
   }
 }
 
@@ -104,8 +102,8 @@ ReadPreference.prototype.toObject = function() {
     object['tags'] = this.tags;
   }
 
-  if(this.maxStalenessMS) {
-    object['maxStalenessMS'] = this.maxStalenessMS;
+  if(this.maxStalenessSeconds) {
+    object['maxStalenessSeconds'] = this.maxStalenessSeconds;
   }
 
   return object;

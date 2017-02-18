@@ -1,7 +1,6 @@
 "use strict";
 
 var f = require('util').format
-  , crypto = require('crypto')
   , require_optional = require('require_optional')
   , Query = require('../connection/commands').Query
   , MongoError = require('../error');
@@ -62,7 +61,6 @@ SSPI.prototype.auth = function(server, connections, db, username, password, opti
 
   // Valid connections
   var numberOfValidConnections = 0;
-  var credentialsValid = false;
   var errorObject = null;
 
   // For each connection we need to authenticate
@@ -82,7 +80,6 @@ SSPI.prototype.auth = function(server, connections, db, username, password, opti
         } else if(r && typeof r == 'object' && r.result['errmsg']) {
           errorObject = r.result;
         } else {
-          credentialsValid = true;
           numberOfValidConnections = numberOfValidConnections + 1;
         }
 
@@ -124,10 +121,7 @@ var SSIPAuthenticate = function(self, username, password, gssapiServiceName, ser
   // Execute first sasl step
   server(connection, new Query(self.bson, "$external.$cmd", command, {
     numberToSkip: 0, numberToReturn: 1
-  }).toBin(), function(err, r) {
-  // server.command("$external.$cmd"
-  //   , command
-  //   , { connection: connection }, function(err, r) {
+  }), function(err, r) {
     if(err) return callback(err, false);
     var doc = r.result;
 
@@ -147,10 +141,7 @@ var SSIPAuthenticate = function(self, username, password, gssapiServiceName, ser
         // Execute the command
         server(connection, new Query(self.bson, "$external.$cmd", command, {
           numberToSkip: 0, numberToReturn: 1
-        }).toBin(), function(err, r) {
-        // server.command("$external.$cmd"
-        //   , command
-        //   , { connection: connection }, function(err, r) {
+        }), function(err, r) {
           if(err) return callback(err, false);
           var doc = r.result;
 
@@ -167,10 +158,7 @@ var SSIPAuthenticate = function(self, username, password, gssapiServiceName, ser
             // Execute the command
             server(connection, new Query(self.bson, "$external.$cmd", command, {
               numberToSkip: 0, numberToReturn: 1
-            }).toBin(), function(err, r) {
-            // server.command("$external.$cmd"
-            //   , command
-            //   , { connection: connection }, function(err, r) {
+            }), function(err, r) {
               if(err) return callback(err, false);
               var doc = r.result;
 
@@ -185,10 +173,7 @@ var SSIPAuthenticate = function(self, username, password, gssapiServiceName, ser
                 // Execute the command
                 server(connection, new Query(self.bson, "$external.$cmd", command, {
                   numberToSkip: 0, numberToReturn: 1
-                }).toBin(), function(err, r) {
-                // server.command("$external.$cmd"
-                //   , command
-                //   , { connection: connection }, function(err, r) {
+                }), function(err, r) {
                   if(err) return callback(err, false);
                   var doc = r.result;
 
@@ -240,13 +225,11 @@ SSPI.prototype.logout = function(dbName) {
  */
 SSPI.prototype.reauthenticate = function(server, connections, callback) {
   var authStore = this.authStore.slice(0);
-  var err = null;
   var count = authStore.length;
   if(count == 0) return callback(null, null);
   // Iterate over all the auth details stored
   for(var i = 0; i < authStore.length; i++) {
-    this.auth(server, connections, authStore[i].db, authStore[i].username, authStore[i].password, authStore[i].options, function(err, r) {
-      if(err) err = err;
+    this.auth(server, connections, authStore[i].db, authStore[i].username, authStore[i].password, authStore[i].options, function(err) {
       count = count - 1;
       // Done re-authenticating
       if(count == 0) {
