@@ -22,8 +22,6 @@ This project includes.<br/>
       <li>Express JS framework - v4.13.1</li>
       <li>Node.js - v5.5.0</li>
     </ol></li>
-  </ul>
-
   <li><a href='https://github.com/michaelbromley/ng2-pagination'>NG2-pagination</a></li>
 </ul>
 
