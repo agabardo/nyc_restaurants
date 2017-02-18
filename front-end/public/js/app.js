@@ -60,19 +60,32 @@ app.controller("myController", function($scope, $http){
 	    	for(i=0;i< data.length ;i++){
     			coords = (data[i].address.coord).split(",");
     			addMarker(parseFloat(coords[1]).toFixed(6), parseFloat(coords[0]).toFixed(6), data[i].name);
-            }
+        }
     		$scope.$evalAsync(function() {
     			$scope.restaurants = data;
     		});
     	 });
     }
 
-	//TO DO...
+	/***
+	* Deleting a restaurant record.
+	* The key point in this method is to send the proper HTTP headers for node.
+	*/
 	$scope.deleteRestaurant = function(id){
-		window.alert(id);
-		var request = $http({method: "delete", url: "http://localhost:3000/delete/"+id}).success(function(data,status){
-			window.alert(status);
-		});
+		$http({url: 'delete',method: 'DELETE',
+        data: {id:id},
+        headers: {
+            "Content-Type": "application/json;charset=utf-8"
+        }
+    }).then(function(res) {
+        //console.log(res.data);
+				$scope.loadData();
+				$scope.loadTable();
+				//TO DO.. Change this window.alert to a Bootstrap alert.
+				window.alert("The restaurant was deleted successfully.");
+    }, function(error) {
+        console.log(error);
+    });
 	}
 
 	//TO DO...

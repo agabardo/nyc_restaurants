@@ -62,7 +62,7 @@ To access your project use the address: http://localhost:3000/
 <li>OK. <del>Build a simple data-flow graph with the flow of the app.</del></li>
 <li>OK. <del>Sanitization of unused javascript functions.</del></li>
 <li>OK. <del>Sanitization of unused packages.</del></li>
-<li>Add the missing endpoints for the API.</li>
+<li>OK. Add the missing endpoints for the API.</li>
 <li>Add the Geolocation as the suggested Lat,Long for a new restaurant.</li>
 <li>Add an integration with oAuth for login.</li>
 </ul>
