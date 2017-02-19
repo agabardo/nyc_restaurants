@@ -61,6 +61,9 @@ To access your project use the address: http://localhost:3000/
 <li>OK. <del>Sanitization of unused javascript functions.</del></li>
 <li>OK. <del>Sanitization of unused packages.</del></li>
 <li>OK. <del>Add the missing endpoints for the API.</del></li>
+<li>Make an easy option for Cleaning the search.</li>
+<li>Making the submission of the filters automatic.</li>
+<li>Create a more 'user friendly' menu for the 'Cuisine' drop down.</li>
 <li>Add the Geolocation as the suggested Lat,Long for a new restaurant.</li>
 <li>Add an integration with oAuth for login.</li>
 </ul>
