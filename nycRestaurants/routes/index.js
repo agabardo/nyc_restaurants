@@ -29,7 +29,6 @@ router.get('/borough', function(req, res, next){
  * Used to build the filter form.
  */
 router.get('/cuisine', function(req, res, next) {
-
 	var restaurantsModel = mongoose.model('Restaurants');
 	restaurantsModel.distinct("cuisine", function(err, cuisines) {
         if (err) {
@@ -38,6 +37,16 @@ router.get('/cuisine', function(req, res, next) {
             res.json(cuisines);
         }
     });
+});
+
+/***
+/ Adding restaurants to Session.
+*/
+router.get('/addFavourite', function(req,res){
+  sess = req.session;
+  sess.favorite=req.query.id;
+  console.log("Oi node id" + req.query.id);
+  res.send("Oi node id " + req.query.id);
 });
 
 /**

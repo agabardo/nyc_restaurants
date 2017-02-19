@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var db = require('./model/db');
 var restaurants = require('./model/restaurants');
+var session = require('express-session');
 var app = express();
 
 // view engine setup
@@ -59,5 +60,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.use(session({
+    secret: 'thisIsASecret',
+    resave: true,
+    saveUninitialized: true
+}));
 
 module.exports = app;

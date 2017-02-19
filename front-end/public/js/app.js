@@ -72,26 +72,30 @@ app.controller("myController", function($scope, $http){
 	* The key point in this method is to send the proper HTTP headers for node.
 	*/
 	$scope.deleteRestaurant = function(id){
-		$http({url: 'delete',method: 'DELETE',
-        data: {id:id},
-        headers: {
-            "Content-Type": "application/json;charset=utf-8"
-        }
-    }).then(function(res) {
-        //console.log(res.data);
-				$scope.loadData();
-				$scope.loadTable();
-				//TO DO.. Change this window.alert to a Bootstrap alert.
-				window.alert("The restaurant was deleted successfully.");
-    }, function(error) {
-        console.log(error);
-    });
+		if(confirm("Confirm the deletion of this restaurant?")){
+			$http({url: 'delete',method: 'DELETE',
+	        data: {id:id},
+	        headers: {
+	            "Content-Type": "application/json;charset=utf-8"
+	        }
+	    }).then(function(res) {
+	        //console.log(res.data);
+					$scope.loadData();
+					$scope.loadTable();
+					//TO DO.. Change this window.alert to a Bootstrap alert.
+					window.alert("The restaurant was deleted successfully.");
+	    }, function(error) {
+	        console.log(error);
+	    });
+		}
 	}
 
 	//TO DO...
 	$scope.loveRestaurant = function(id){
 		window.alert(id);
-
+		$http.get('http://localhost:3000/addFavourite?id='+id).success(function(data) {
+			window.alert(data);
+		});
 	}
 
 
@@ -99,7 +103,6 @@ app.controller("myController", function($scope, $http){
 	 * Receiving data from browser and sending the data to Node.js
 	 */
 	$scope.addRestaurant = function(){
-
 		postData = {
 			'name':$scope.name,
 			'building': $scope.building,
@@ -109,8 +112,7 @@ app.controller("myController", function($scope, $http){
 			'zipcode':$scope.zipcode,
 			'borough':$scope.add_borough,
 			'cuisine':$scope.add_cuisine}
-
-		var request = $http({method: "post", url: "http://localhost:3000/addNew", data: postData}).success(function(data,status){
+			var request = $http({method: "post", url: "http://localhost:3000/addNew", data: postData}).success(function(data,status){
 			if(data){
 				window.alert(data);
 			}
