@@ -48,14 +48,26 @@ router.get('/addFavourite', function (req,res) {
     var favorites = req.session.favorites || [];
     favorites.push(req.query.id);
     req.session.favorites = favorites;
-    res.send("Saved"); //Tell the API that the session was saved.
+    res.send("Restaurant Saved to favorites."); //Tell the API that the session was saved.
 });
 
 //Reading the sessions with the favorites.
 router.get('/favorites', function (req, res) {
+    var restaurantsModel = mongoose.model('Restaurants');
     var sess = req.session;
-    console.log(sess);
-    res.send(req.session);
+    var limit = 100;
+    var filter = {};
+    filter._id = req.session.favorites;
+    //console.log(sess);
+    //res.send(req.session);
+    var restaurant_fields = {zipcode : true, street : true, grades : true, address : true, building : true, restaurant_id : true, name : true, cuisine : true, borough : true};
+	restaurantsModel.find(filter,restaurant_fields).limit(limit).then(function (err, restaurants) {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json(restaurants);
+        }
+    });
 });
 
 
@@ -125,11 +137,11 @@ router.post('/addNew', function(req, res, next) {
         "zipcode" : req.body.zipcode,
         "building" : req.body.building,
         "coord" : [ req.body.lat, req.body.long ]
-      },
-      "borough" : req.body.borough,
-      "cuisine" : req.body.cuisine,
-      "name" : req.body.name,
-      "restaurant_id" : "4170462033"
+        },
+        "borough" : req.body.borough,
+        "cuisine" : req.body.cuisine,
+        "name" : req.body.name,
+        "restaurant_id" : "4170462033"
     });
 
 	inserted.save(function (err) {
