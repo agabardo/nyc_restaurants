@@ -9,13 +9,13 @@ var app = angular.module("nycRestaurants", ['angularUtils.directives.dirPaginati
 **/
 app.controller("myController", function ($scope, $http) {
 	$scope.loadData = function () {
-	    $http.get('http://localhost:3000/borough').success(function (data) {
+	    $http.get('/borough').success(function (data) {
             $scope.borough = data;
 	    });
-	    $http.get('http://localhost:3000/cuisine').success(function (data) {
+	    $http.get('/cuisine').success(function (data) {
             $scope.cuisines = data;
 	    });
-	    $http.get('http://localhost:3000/grades').success(function (data) {
+	    $http.get('/grades').success(function (data) {
             $scope.grades = data;
 	    });
 	};
@@ -23,7 +23,7 @@ app.controller("myController", function ($scope, $http) {
 	$scope.loadTable = function () {
 		$scope.currentPage = 1;
 		$scope.pageSize = 20;
-		$http.get('http://localhost:3000/initialList?borough=Brooklyn&cuisine=Donuts').success(function (data) {
+		$http.get('/initialList?borough=Brooklyn&cuisine=Donuts').success(function (data) {
             $scope.restaurants = data;
             $(document).ready(function () { //Adding the markers to the Google Maps Map. Map should be loaded first.
                 var i, coords;
@@ -94,8 +94,8 @@ app.controller("myController", function ($scope, $http) {
 
 	//TO DO...
 	$scope.loveRestaurant = function (id) {
-		window.alert(id);
-		$http.get('http://localhost:3000/addFavourite?id=' + id).success(function (data) {
+		//window.alert(id);
+		$http.get('/addFavourite?id=' + id).success(function (data) {
 			window.alert(data);
 		});
 	};
@@ -115,7 +115,7 @@ app.controller("myController", function ($scope, $http) {
 			'borough' : $scope.add_borough,
 			'cuisine' : $scope.add_cuisine
         };
-        var request = $http({method: "post", url: "http://localhost:3000/addNew", data: postData}).success(function (data, status) {
+        var request = $http({method: "post", url: "/addNew", data: postData}).success(function (data, status) {
 			if (data) {
 				window.alert(data);
 			}
