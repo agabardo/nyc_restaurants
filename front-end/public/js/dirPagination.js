@@ -1,3 +1,4 @@
+/*global $, initialize, angular*/
 /**
  * dirPagination - AngularJS module for paginating (almost) anything.
  *
@@ -19,8 +20,8 @@
     /**
      * Config
      */
-    var moduleName = 'angularUtils.directives.dirPagination';
-    var DEFAULT_ID = '__default';
+    var moduleName = 'angularUtils.directives.dirPagination',
+        DEFAULT_ID = '__default';
 
     /**
      * Module
