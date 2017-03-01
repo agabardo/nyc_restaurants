@@ -96,8 +96,11 @@ app.controller("myController", function ($scope, $http) {
 	$scope.loveRestaurant = function (id) {
 		//window.alert(id);
 		$http.get('/addFavourite?id=' + id).success(function (data) {
-			window.alert(data);
-		});
+            window.alert(data);
+            $http.get('/favorites').success(function (data) {
+                $scope.favoriterestaurants = data;
+            });
+	    });
 	};
 
 

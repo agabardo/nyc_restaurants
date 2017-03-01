@@ -151,8 +151,35 @@
           </div>
           <div class="tab-pane fade" id="tab3default">
             <h3>My places</h3>
-            The places you have liked.<br/>
-            This is a future feature. </div>
+            <h4>The places you have liked.</h4>
+              <div id="favoriteslist">
+                  <table border="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th><span class="glyphicon glyphicon-remove btnRemove" aria-hidden="true"></span></th>
+                          <th>Restaurant Name</th>
+                          <th>Address</th>
+                          <th>Cuisine</th>
+                          <th>Borough</th>
+                          <th>Grade</th>
+                          <th><span class="glyphicon glyphicon-heart btnLove" aria-hidden="true"></span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="restaurant in favoriterestaurants" ng-class-odd="'odd'" ng-class-even="'even'">
+                          <td><a class='btnRemove' href="javascript:void(null)" ng-click="deleteRestaurantFromFavourites(restaurant._id)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                          <td>{{restaurant.name}}</td>
+                          <td>{{restaurant.address.zipcode}} - {{restaurant.address.street}}</td>
+                          <td>{{restaurant.cuisine}}</td>
+                          <td>{{restaurant.borough}}</td>
+                          <td class='centered'>{{restaurant.grades[0].grade}}</td>
+                          <td><a class='btnLove' href="javascript:void(null)" ng-click="loveRestaurant(restaurant._id)"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></td>
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+            
         </div>
       </div>
     </div>
@@ -169,9 +196,9 @@
     </div>
   </footer>
 </div>
+<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
 <script type="text/javascript" src="./js/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="./js/dirPagination.js"></script>
-<script type="text/javascript" src="./js/jquery-2.2.2.min.js"></script>
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDnW0Tg6LWLop77232_WDkZ9DUq5w07-BA"></script>
 <script type="text/javascript" src="./js/custom.js"></script>
