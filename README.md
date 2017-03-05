@@ -56,17 +56,17 @@ To access your project use the address: http://localhost:3000/
 <br/>
 ##Next milestones
 <ul>
-<li>OK. <del>Add a tree structure to explain the folders in the project.</del></li>
-<li>OK. <del>Build a simple data-flow graph with the flow of the app.</del></li>
-<li>OK. <del>Sanitization of unused javascript functions.</del></li>
-<li>OK. <del>Sanitization of unused packages.</del></li>
-<li>OK. <del>Add the missing endpoints for the API.</del></li>
 <li>Make an easy option for Clearing the search.</li>
 <li>Making the submission of the filters automatic.</li>
 <li>Create an UIX friendly menu for the 'Cuisine' drop down (too many items).</li>
 <li>Change the favorites from sessios to SQLite or other database.</li>
 <li>Add the Geolocation as the suggested Lat,Long for a new restaurant.</li>
 <li>Add an integration with oAuth for login.</li>
+<li>OK. <del>Add a tree structure to explain the folders in the project.</del></li>
+<li>OK. <del>Build a simple data-flow graph with the flow of the app.</del></li>
+<li>OK. <del>Sanitization of unused javascript functions.</del></li>
+<li>OK. <del>Sanitization of unused packages.</del></li>
+<li>OK. <del>Add the missing endpoints for the API.</del></li>
 </ul>
 <br/>
 
