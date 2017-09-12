@@ -1,4 +1,5 @@
 # NYC RESTAURANTS
+## Although this project is 'compiling' and working, it contains conceptual errors. I will rebuild soon.
 ## Please note. This project is permanently under construction, partially working, some functions need to be finished.
 <p align="center">
   <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/front-end/public/images/logo.png" alt=""/>
