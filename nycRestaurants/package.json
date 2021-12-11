@@ -11,11 +11,11 @@
     "debug": "~2.2.0",
     "ejs": "^2.5.2",
     "express": "~4.13.4",
+    "express-session": "^1.7.6",
     "jade": "~1.11.0",
     "method-override": "^2.3.6",
     "mongoose": "^4.6.1",
     "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
-    "express-session": "^1.7.6"
+    "serve-favicon": "~2.3.0"
   }
 }
