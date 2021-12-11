@@ -1,6 +1,6 @@
 # NYC RESTAURANTS
 ## Although this project is 'compiling' and working, it contains conceptual errors. I will rebuild soon.
-## Please note. This project is very outdated, do not follow the current best practices for Node.js, neither for Angular or anything else in this repo. May have some useful bits of code, but I would not use any of this in production. Cheers.
+## Please note. This project is very outdated. The project don't follows the current best practices for Node.js, neither for Angular or anything else in this repo. May have some useful bits of code, but I would not use any of this in production. Cheers.
 <p align="center">
   <img src="https://raw.githubusercontent.com/agabardo/nyc_restaurants/master/front-end/public/images/logo.png" alt=""/>
 </p>
